@@ -1,0 +1,29 @@
+#object {
+    display: block;
+    height: 180px;
+    width: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    background-size: contain;
+    background-color: #fe5652;
+    border-radius: 24px;
+    opacity: 0; /* 처음에는 안 보이게 */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: visible;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    opacity: 1; /* 애니메이션이 적용되면서 보이게 */
+}
