@@ -30,7 +30,7 @@ body{
   margin: 0px 20vh 0px 20vh;
 }
 
-a{
+header a{
   font-size:40px;
   font-weight: 800 !important;
   text-decoration: none;
@@ -63,7 +63,7 @@ a:link, a:visited {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);  /* 그림자 효과 */
 }
 
-img{
+#intro-img> img{
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -90,6 +90,7 @@ img{
 div > h4{
   font-size:40px;
   font-weight: 700;
+  margin-bottom:30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -103,7 +104,47 @@ div > h4{
 }
 
 
+/**********************/
+/**** 나의 성격 부분 ****/
+/**********************/
+.accordion {
+  width: 100vh;
+  margin: auto;
+  margin-bottom: 100px;
+}
 
+/**********************/
+/**** 기술 스택 부분 ****/
+/**********************/
+#tech_stack{
+  width: 800px;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+.stack{
+  display: flex;
+  justify-content: center;
+}
+
+p{
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/**********************/
+/**** 참고사이트 부분 ****/
+/**********************/
+#site{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+}
 
 
 /* 텍스트가 처음에는 안 보이도록 설정 */
