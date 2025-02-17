@@ -6,22 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>신영님 소개페이지</title>
     <link rel="stylesheet" href="/css/team-sy.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script>
+        // 페이지 로드 후 1초 뒤에 fadeIn 클래스 추가
+        window.onload = function () {
+            setTimeout(() => {
+                document.getElementById("text").classList.add("fadeIn");
+            }, 500);  // 500ms 후에 애니메이션 시작
+        };
+    </script>
 </head>
 
 <body>
-    <div id="object">
-        안녕하세요 ! 반갑습니다 😄 <br>
-        저는 끊임없이 배우고 성장하는 개발자 박신영입니다 🚀
-        테스트할거양
-    </div>
+    <header>
+        <div>
+            <Button>이전으로 돌아가기</Button> 2조 도토리 - 박신영
 
-    <script>
-        window.onload = function () {
-            setTimeout(() => {
-                document.getElementById("object").classList.add("fadeIn");
-            }, 1000);
-        };
-    </script>
+        </div>
+
+    </header>
+    <div id="intro">
+        <div id="intro-img">
+            <img
+                src="data:image/jpeg;base64,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">
+        </div>
+
+        <div id="text">
+            안녕하세요 ! 반갑습니다 😄 <br>
+            저는 끊임없이 배우고 성장하는 개발자 박신영입니다 🚀
+        </div>
+    </div>
+    <div>
+        <h4>MBTI</h4>
+        <div>
+            ISFP
+
+        </div>
+        <div>
+            <h4>나만의 강점</h4>
+
+        </div>
+
+        <div>
+            <h4>기술 스텍</h4>
+
+        </div>
+
+        <div>
+            <h4>참고 사이트</h4>
+
+            <div>기술블로그</div>
+            <div>깃허브</div>
+        </div>
+    </div>
 </body>
 
 </html>

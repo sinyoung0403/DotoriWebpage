@@ -1,29 +1,45 @@
-#object {
-    display: block;
-    height: 180px;
-    width: 180px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 100px;
-    background-size: contain;
-    background-color: #fe5652;
-    border-radius: 24px;
-    opacity: 0; /* 처음에는 안 보이게 */
+
+*{
+  background-color: antiquewhite;
 }
 
+#intro{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+#intro-img{
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);  /* 그림자 효과 */
+
+}
+
+img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: white;
+  padding:20px;
+  position: relative;
+}
+
+
+/* 텍스트가 처음에는 안 보이도록 설정 */
+#text {
+    opacity: 0;  /* 처음에는 보이지 않음 */
+    text-align: center;
+    animation: fadeIn 2s ease-in-out forwards;  /* 애니메이션 설정 */
+    margin-top: 20px;
+}
+
+/* @keyframes로 fadeIn 애니메이션 정의 */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    visibility: visible;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.fadeIn {
-    animation-name: fadeIn;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-in-out;
-    opacity: 1; /* 애니메이션이 적용되면서 보이게 */
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
