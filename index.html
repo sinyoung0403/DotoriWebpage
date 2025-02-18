@@ -1,12 +1,104 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메인페이지</title>
-    <link rel="stylesheet" href="index.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>방명록</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+
+        .mycards {
+            margin: 20px auto 20px auto;
+            width: 1200px;
+        }
+
+        .mypostingbox {
+            width: 500px;
+            margin: 20px auto 20px auto;
+            padding: 20px 20px 20px 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 3px 0px grey;
+        }
+
+        .mybtn {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 10px;
+        }
+
+        .mybtn>button {
+            margin-right: 10px;
+        }
+    </style>
+    <script>
+        function openclose() {
+            $('#postingbox').toggle();
+        }
+        function makeCard() {
+            let name = $('#name').val();
+            let content = $('#content').val();
+
+            let temp_html = `
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">${name}</h5>
+                        <p class="card-text">${content}</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted"><button>삭제</button></small>
+                    </div>
+                </div>
+            </div>`;
+            $('#card').append(temp_html);
+        }
+    </script>
 </head>
+
 <body>
-    
+    <div class="commendTitle text-center">
+        <button type="button" class="btn btn-outline-secondary" onclick="openclose()">방명록 삽입</button>
+    </div>
+    <div class="mypostingbox" id="postingbox">
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="name" placeholder="name@example.com">
+            <label for="floatingInput">닉네임</label>
+        </div>
+        <div class="form-floating">
+            <input type="email" class="form-control" id="content" placeholder="name@example.com">
+            <label for="floatingTextarea">내용</label>
+        </div>
+        <div class="mybtn">
+            <button onclick="makeCard()" type="button" class="btn btn-dark">기록하기</button>
+        </div>
+    </div>
+    <div class="mycards">
+        <div id="card" class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">닉네임</h5>
+                        <p class="card-text">내용</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted"><button>삭제</button></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
