@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gamja+Flower&family=Gowun+Dodum&display=swap');
+
+* {
+    font-family: 'Gowun Dodum', sans-serif;
+}
+
+
+#test{
+        position: absolute;
+        top: 200px;    /* 상단에서 50px 위치 */
+
+        width: 100%;
+        height: 300px;
+        background-color:#ffeedb79 !important;
+        z-index: -1;
+}
+
+/**********************/
+/**** Header 부분 ****/
+/**********************/
+header{
+    background-color:#c0711779 !important;
+    height: 80px ;
+    width: 100%;
+  }
+
+  
+header a{
+    margin: 0px 30px 0px 30px ;
+    font-size:30px;
+    font-weight: 800 !important;
+    text-decoration: none;
+    line-height: 2;
+  }
+  
+a:link, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+/**********************/
+/**** Input 부분 ****/
+/**********************/
+.mypostingbox {
+    background-color: rgb(255, 247, 233);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    border: 2px solid rgb(235, 186, 146);
+    border-radius: 20px;
+    width: 700px;
+    padding: 20px;
+    box-shadow: 0px 0px 3px 0px rgba(128, 128, 128, 0.616);
+}
+
+.form-floating{
+    width: 80%;
+    margin: 20px 0;
+    box-shadow: 3px 2px 0px 0px rgba(207, 207, 207, 0.678);
+}
+
+.mypostingbox  h3 {
+    font-weight: 600;
+}
+
+#scrumBtn{
+    width: 400px;
+}
+
+
+/**********************/
+/**** 데이터 추가 부분 ****/
+/**********************/
+#stack_scrum{
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto;
+    width: 100vh;
+}
+.accordion-item{
+    margin-bottom: 10px;
+    border: 1px groove #c0711779 !important;
+    border-radius: 2px !important;
+}
