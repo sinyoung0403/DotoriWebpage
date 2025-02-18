@@ -54,11 +54,67 @@
 }
 .profile-pic {
 
-    margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+}
+.profile-pic > img {
+    border-radius: 50%;
+    margin: 10px;
+    
 }
 
+.btn-gh{
+    
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#btn-gh{
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0px 10px 0px;
+    text-decoration: none;
+    font-family: "Gowun Dodum", serif;
+    font-weight: 400;
+    font-style: normal;
+}
 /**** 소개말 부분 ****/
+
+/**** 캐러셀 부분 ****/
+#carouselExampleDark {
+    margin: auto auto 20px auto;
+    width:100%;
+       
+}
+
+.carousel-item {
+    height: 300px;
+    background-color:#b47b3979 !important;   
+}
+.card {
+    
+    margin: auto auto 50px auto ;
+    font-family: "Gowun Dodum", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+/**** 캐러셀 부분 ****/
+
+/**** 참고 사이트 부분 ****/
+
+#site {
+    margin-top: 20px;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Gowun Dodum", serif;
+    font-weight: 400;
+    font-style: normal;
+}
