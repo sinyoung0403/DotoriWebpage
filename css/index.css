@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gamja+Flower&family=Gowun+Dodum&display=swap');
+
+* {
+    font-family: 'Gowun Dodum', sans-serif;
+}
+
+.maintitle {
+    background-image: url(https://search.pstatic.net/sunny/?src=https%3A%2F%2Fpng.pngtree.com%2Fthumb_back%2Ffw800%2Fbackground%2F20221202%2Fpngtree-acorns-and-acorn-leaves-seamless-autumn-pattern-vector-illustration-image_1489795.jpg&type=a340);
+    margin: 0px 0px 10px 0px;
+    color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-title {
+    font-family: "Gamja Flower", serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.introCard {
+    border: 1px solid rgba(216, 216, 216, 0.726) !important;
+    margin: 50px;
+}
+.card-group{
+    margin: 0px 100px 0px 100px;
+}
+
+
+.btn {
+    border: 1px solid black;
+    border-radius: 2px;
+    margin: 200px auto 0px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.more_btn {
+    margin: 0px 0px 0px 475px;
+
+    color: skyblue;
+    border: 1px solid skyblue;
+    border-radius: 5px
+}
+
+.mycards {
+    margin: 20px auto 20px auto;
+    width: 1200px;
+}
+
+.mypostingbox {
+    width: 500px;
+    margin: 20px auto 20px auto;
+    padding: 20px 20px 20px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px 0px grey;
+}
+
+.mybtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 10px;
+}
+
+.mybtn>button {
+    margin-right: 10px;
+}

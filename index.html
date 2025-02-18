@@ -1,191 +1,83 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>도토리_프로젝트</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script>
-        function openclose() {
-            $('#postingbox').toggle();
-        }
-        function makeCard() {
-            let name = $('#name').val();
-            let content = $('#content').val();
-
-            let temp_html = `
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">${name}</h5>
-                        <p class="card-text">${content}</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted"><button>삭제</button></small>
-                    </div>
-                </div>
-            </div>`;
-            $('#card').append(temp_html);
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>도토리_프로젝트</title>
+  <link rel="stylesheet" href="./css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script>
+    function openclose() {
+      $('#postingbox').toggle();
+    }
+  </script>
+  <script type="module" src="./js/index.js"></script>
 </head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gamja+Flower&family=Gowun+Dodum&display=swap');
-
-    * {
-        font-family: 'Gowun Dodum', sans-serif;
-    }
-
-    .maintitle {
-        background-image: url(https://search.pstatic.net/sunny/?src=https%3A%2F%2Fpng.pngtree.com%2Fthumb_back%2Ffw800%2Fbackground%2F20221202%2Fpngtree-acorns-and-acorn-leaves-seamless-autumn-pattern-vector-illustration-image_1489795.jpg&type=a340);
-        margin: 0px 0px 10px 0px;
-        color: transparent;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .team-title {
-
-        font-family: "Gamja Flower", serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .card {
-
-        border: 2px solid black;
-        border-left: 2px solid black !important;
-        border-radius: 5px !important;
-        margin: 30px 10px 0px 10px;
-    }
-
-    .btn {
-        border: 1px solid black;
-        border-radius: 2px;
-
-        margin: 450px auto 0px auto;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .more_btn {
-        margin: 0px 0px 0px 475px;
-        background-color: transparent;
-        color: skyblue;
-        border: 1px solid skyblue;
-        border-radius: 5px
-    }
-
-    .mycards {
-        margin: 20px auto 20px auto;
-        width: 1200px;
-    }
-
-    .mypostingbox {
-        width: 500px;
-        margin: 20px auto 20px auto;
-        padding: 20px 20px 20px 20px;
-        border-radius: 5px;
-        box-shadow: 0px 0px 3px 0px grey;
-    }
-
-    .mybtn {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-
-        margin-top: 10px;
-    }
-
-    .mybtn>button {
-        margin-right: 10px;
-    }
-</style>
 
 <body>
-    <div class="maintitle">000</div>
-    <div class="team-title">
-        <h2>도토리</h2>
-        <h1>팀 소개 카드</h1>
+  <div class="maintitle">000</div>
+  <div class="team-title">
+    <h2>도토리</h2>
+    <h1>팀 소개 카드</h1>
+  </div>
+  <div class="card-group">
+    <div class="card introCard">
+      <img src="" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">김규현</h5>
+        <p class="card-text">팀 소개 1</p>
+      </div>
+      <div class="card-footer">
+        <a href="./team-gh.html">자세히 보기</a>
+      </div>
     </div>
-    <div class="card-group">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-            </div>
-            <div class="card-footer">
-                <button class="more_btn">자세히 보기</button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            </div>
-            <div class="card-footer">
-                <button class="more_btn">자세히 보기</button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This card has even longer content than the first to show that equal height action.</p>
-            </div>
-            <div class="card-footer">
-                <button class="more_btn">자세히 보기</button>
-            </div>
-        </div>
+    <div class="card introCard">
+      <img src="" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">김채진</h5>
+        <p class="card-text">팀 소개 2</p>
+      </div>
+      <div class="card-footer">
+        <a href="">자세히 보기</a>
+      </div>
     </div>
+    <div class="card introCard">
+      <img src="/img/sy.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">박신영</h5>
+        <p class="card-text">팀 소개 3 </p>
+      </div>
+      <div class="card-footer">
+        <a href="./team-sy.html">자세히 보기</a>
+      </div>
+    </div>
+  </div>
 
-    <div class="commendTitle text-center">
-        <button type="button" class="btn btn-outline-secondary" onclick="openclose()">방명록 삽입</button>
+  <div class="commendTitle text-center" >
+    <button type="button" class="btn btn-outline-secondary" onclick="openclose()">방명록 버튼</button>
+  </div>
+  <div class="mypostingbox" id="postingbox" style="display: none;">
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="name" placeholder="name@example.com">
+      <label for="floatingInput">닉네임</label>
     </div>
-    <div class="mypostingbox" id="postingbox">
-        <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="name" placeholder="name@example.com">
-            <label for="floatingInput">닉네임</label>
-        </div>
-        <div class="form-floating">
-            <input type="email" class="form-control" id="content" placeholder="name@example.com">
-            <label for="floatingTextarea">내용</label>
-        </div>
-        <div class="mybtn">
-            <button onclick="makeCard()" type="button" class="btn btn-dark">기록하기</button>
-        </div>
+    <div class="form-floating">
+      <input type="email" class="form-control" id="content" placeholder="name@example.com">
+      <label for="floatingTextarea">내용</label>
     </div>
-    <div class="mycards">
-        <div id="card" class="row row-cols-1 row-cols-md-4 g-4">
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">닉네임</h5>
-                        <p class="card-text">내용</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted"><button>삭제</button></small>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="mybtn">
+      <button id="cardBtn" type="button" class="btn btn-dark">기록하기</button>
     </div>
+  </div>
+
+  
+  <div class="mycards">
+    <div id="guestBook" class="row row-cols-1 row-cols-md-4 g-4">
+      <!-- 여기에 방명록 적힐 예정 -->
+    </div>
+  </div>
 </body>
 
 </html>
