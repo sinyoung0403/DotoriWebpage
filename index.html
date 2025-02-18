@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>도토리_프로젝트</title>
   <link rel="stylesheet" href="./css/index.css">
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
   <script>
     function openclose() {
       $('#postingbox').toggle();
@@ -17,25 +23,98 @@
 </head>
 
 <body>
-  <div class="maintitle">000</div>
-  <div class="team-title">
-    <h2>도토리</h2>
-    <h1>팀 소개 카드</h1>
-    <p>오늘 서울의 온도는 <span style="color:brown;" id="tempInfo"></span>°C 이며, 날씨는 <span  style="color:brown;"id="weatherInfo"></span> 입니다.</p>
+  <header>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="./dailyScrum.html">데일리 스크럼</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">메인 페이지</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./index.html#guestBookse">방명록 작성</a>
+      </li>
+    </ul>
+  </header>
+
+
+  <!-- 소갯말부분 -->
+  <div class="maintitle">
+    <div class="team-title">
+      <h2>🌰  2조 도토리   🌰</h2>
+    </div>
   </div>
+
+
+  <!-- <div class="commendTitle text-center">
+    <p>오늘의 온도는 <span style="color:brown;" id="tempInfo"></span>°C 이며, 날씨는 <span style="color:brown;"
+      id="weatherInfo"></span> 입니다.</p>
+  </div> -->
+
+
+
+  <!-- 팀 소개, 팀 목표, 팀 약속 적는 부분 -->
+  <div id="carouselExampleDark" class="carousel carousel-dark slide text-center">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <div class="d-block w-100" alt="..."></div>
+        <div class="carousel-caption d-none d-md-block">
+          <h2>팀 소개</h2>
+          <p>안녕하세요 ! 작지만 강한 시작 "2조 도토리" 입니다. <br>
+                 소개입니당 <br>
+                 소개입ㄴ디ㅏㅇ 2<br>
+                 
+          
+          </p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <div class="d-block w-100" alt="..."></div>
+        <div class="carousel-caption d-none d-md-block">
+          <h5>팀 목표</h5>
+          <p>저희 조는 사전 캠프 때 배운 웹 강의를 워밍 업 하고자, 배웠던 내용들을 중점으로 구현했습니다.<br>
+            저희가 사용한 기술은 HTML, CSS, Bootstrap, JavaScript, Firebase 입니다<br>
+          </p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="d-block w-100" alt="..."></div>
+        <div class="carousel-caption d-none d-md-block">
+          <h5>팀 약속</h5>
+          <p>1. 화내지 않기 <br>2. 별로면 솔직하게 얘기하기 <br>3. 상처받기 않기 </p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- 팀 소개 카드 -->
   <div class="card-group">
     <div class="card introCard">
-      <img src="" class="card-img-top" alt="...">
+      <img src="https://i.pinimg.com/736x/04/25/48/042548e044808995482c4b4e7785115a.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">김규현</h5>
-        <p class="card-text">팀 소개 1</p>
+        <p class="card-text">개발자를 지향하는 비전공자</p>
       </div>
       <div class="card-footer">
         <a href="./team-gh.html">자세히 보기</a>
       </div>
     </div>
     <div class="card introCard">
-      <img src="./img/totoro.png" class="card-img-top" alt="...">
+      <img src="https://i.pinimg.com/236x/70/1f/49/701f4952bae8e97161e6b4db856c4361.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">김채진</h5>
         <p class="card-text">안녕하세요?</p>
@@ -45,7 +124,7 @@
       </div>
     </div>
     <div class="card introCard">
-      <img src="/img/sy.png" class="card-img-top" alt="...">
+      <img src="https://i.pinimg.com/236x/2f/66/f3/2f66f3078d5340540ac3c178cb8b261e.jpg" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">박신영</h5>
         <p class="card-text">팀 소개 3 </p>
@@ -56,9 +135,11 @@
     </div>
   </div>
 
-  <div class="commendTitle text-center" >
+  <div class="commendTitle text-center">
     <button type="button" class="btn btn-outline-secondary" onclick="openclose()">방명록 버튼</button>
   </div>
+
+  <!-- 방명록 Input -->
   <div class="mypostingbox" id="postingbox" style="display: none;">
     <div class="form-floating mb-3">
       <input type="email" class="form-control" id="name" placeholder="name@example.com">
@@ -73,12 +154,13 @@
     </div>
   </div>
 
-  
-  <div class="mycards">
+  <!-- 방명록 쌓이는 곳 -->
+  <div class="mycards" id="guestBookse">
     <div id="guestBook" class="row row-cols-1 row-cols-md-4 g-4">
       <!-- 여기에 방명록 적힐 예정 -->
     </div>
   </div>
+
 </body>
 
 </html>
