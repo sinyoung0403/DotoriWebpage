@@ -54,7 +54,7 @@ a:link, a:visited {
     padding: 20px; /* 여백 */
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* 그림자 */
     border-radius: 40px;
-    display: inline-block; /* 텍스트 크기만큼 배경 적용 */
+    display: inline-block; 
     font-family: "Gamja Flower", serif;
     display: flex;
     flex-direction: column;
@@ -73,13 +73,74 @@ a:link, a:visited {
 /**********************/
 /**** 팀 소개, 팀 목표, 팀 약속 적는 부분 ****/
 /**********************/
+
+.teamintro-title{
+    color: black; /* 텍스트 색상 */
+    background: white; /* 배경 */
+    padding: 20px; /* 여백 */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* 그림자 */
+    border-radius: 40px;
+    display: inline-block; /* 텍스트 크기만큼 배경 적용 */
+    font-family: "Gamja Flower", serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+#teamintro-title-div{
+    width: 400px;
+    margin: 80px auto auto auto;
+}
+
+.card-title{
+    font-size: 30px;
+    font-weight: 800;
+    margin: 0px !important;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/**********************/
+/**** 방명록 부분분 ****/
+/**********************/
+
+
+
+#addBtn{
+    width: 400px;
+    height: 82.64px;
+    color: black; /* 텍스트 색상 */
+    background: white; /* 배경 */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* 그림자 */
+    border-radius: 40px;
+    display: inline-block; /* 텍스트 크기만큼 배경 적용 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    font-size: 35px;
+}
+
+#addbtn-div{
+    width: 400px;
+    margin: 80px auto 30px auto;
+}
+
 #carouselExampleDark {
     margin: auto;
     width: 70%;
 }
 
 #introcarouse{
-    background-color:#ffc37d79 !important;
+    background-color:#ffd2775e !important;
     padding-bottom: 20px;
 }
 .carousel-item {
@@ -89,8 +150,6 @@ a:link, a:visited {
 .carousel-item p{
     font-size: large;
 }
-
-
 
 .introCard {
     border: 1px solid rgba(216, 216, 216, 0.726) !important;
