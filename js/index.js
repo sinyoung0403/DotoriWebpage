@@ -68,3 +68,14 @@ $(document).on("click","#guestDelete", async function () {
     await deleteDoc(docRef); 
     window.location.reload();
 })
+
+
+var apiUrl = "https://api.openweathermap.org/data/2.5/weather?id=1835848&APPID=2b26f0cb27375511054fc26654fb56b6&lang=kr&units=metric";
+fetch(apiUrl)
+    .then(res => res.json())
+    .then(data => {
+        var temperature = data.main.temp;
+        var description = data.weather[0].description;
+        $('#tempInfo').text(temperature);
+        $('#weatherInfo').text(description);
+})
