@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Diphylleia&family=Gowun+Batang&family=Gowun+Dodum&family=Jua&display=swap');
+
+* {
+    font-family: "Gowun Dodum", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+/* 헤더 */
+.nav,
+header {
+    background-color: #c0711779 !important;
+}
+
+.navbar {
+    margin: 0px 20vh 0px 20vh;
+}
+
+header a {
+    font-size: 40px;
+    font-weight: 800 !important;
+    text-decoration: none;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn {
+    background-color: rgba(255, 145, 0, 0.672) !important;
+}
+
+/* 인트로 이미지 */
+#intro {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+#intro-img {
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    /* 그림자 효과 */
+}
+
+#intro-img>img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 10px;
+    position: relative;
+}
+
+/* mbti */
+#mbti-section {
+    width: 500px;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+div>h4 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 부트캠프 참여 동기 */
+.btn-primary {
+    color: black !important;
+    background-color: white !important;
+    border-color: black !important;
+}
+
+#bootcamp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 기술 스택 */
+#tech_stack {
+    width: 800px;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+.stack {
+    display: flex;
+    justify-content: center;
+}
+
+#tech_stack>p {
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 참고 사이트 */
+#site {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
