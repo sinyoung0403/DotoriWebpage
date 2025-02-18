@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -9,9 +9,13 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <style>
-    .maintitle {
-        background-color: green;
+    
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gamja+Flower&family=Gowun+Dodum&display=swap');
 
+    .maintitle {
+        background-image: url(https://search.pstatic.net/sunny/?src=https%3A%2F%2Fpng.pngtree.com%2Fthumb_back%2Ffw800%2Fbackground%2F20221202%2Fpngtree-acorns-and-acorn-leaves-seamless-autumn-pattern-vector-illustration-image_1489795.jpg&type=a340);
+        margin: 0px 0px 10px 0px;
+        color: transparent;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -19,8 +23,8 @@
     }
 
     .team-title {
-        background-color: greenyellow;
-
+        
+        font-family: "Gamja Flower", serif;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -30,13 +34,15 @@
     .card {
         
         border: 2px solid black ;
+        border-left : 2px solid black  !important;
+        border-radius: 5px !important;
         margin : 30px 10px 0px 10px;
     }
     .btn{
         border: 1px solid black;
         border-radius: 2px;
 
-        margin: 550px auto 0px auto ;
+        margin: 450px auto 0px auto ;
        
         display: flex;
         flex-direction: column;
@@ -54,9 +60,11 @@
 </style>
 
 <body>
-    <h2 class="maintitle">도토리</h2>
-    <h1 class="team-title">팀 소개 카드</h1>
-
+    <div class="maintitle">000</div>
+    <div class="team-title">
+    <h2 >도토리</h2>
+    <h1 >팀 소개 카드</h1>
+      </div>
     <div class="card-group">
         <div class="card">
           <img src="..." class="card-img-top" alt="...">
