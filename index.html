@@ -167,7 +167,7 @@
       <label for="floatingTextarea">내용</label>
     </div>
     <div class="mybtn">
-      <button id="cardBtn" type="button" class="btn btn-dark">기록하기</button>
+      <button id="cardBtn" type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addCommentModal">기록하기</button>
     </div>
   </div>
 
@@ -178,6 +178,43 @@
     </div>
   </div>
 
+  <!-- 방명록 삭제 모달 -->
+  <div class="modal fade" id="delCommentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">방명록 삭제</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                방명록을 삭제하시겠습니까?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-primary" id="deleteCommentBtn">삭제하기</button>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- 방명록 생성 모달 -->
+  <div class="modal fade" id="addCommentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">방명록 생성</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                방명록을 생성하시겠습니까?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-primary" id="addCommentBtn">생성하기</button>
+            </div>
+        </div>
+    </div>
+  </div>
 </body>
 
 </html>
