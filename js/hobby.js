@@ -38,10 +38,10 @@ $("#addhobbybtn").click(async function () {
 
 // 화면에 띄우기
 let dotorihobby = await getDocs(collection(db, "Dotorihobby"));
-dotorihobby.forEach((coments) => {
-    let img = coments.data()['img'];
-    let hobby = coments.data()['hobby'];
-    let name= coments.data()['name'];
+dotorihobby.forEach(coments => {
+    let img = coments.data()['#img'];
+    let hobby = coments.data()['#hobby'];
+    let name= coments.data()['#name'];
     let temp_html = ``
     temp_html = `
     <div class="card" style="width: 18rem;">
@@ -49,8 +49,8 @@ dotorihobby.forEach((coments) => {
         <div class="card-body">
         <p class="card-text"><strong>${hobby}</strong></p>
         <p class="card-text">${name}(Spring_6기)</p>
-        </div>
-    </div>`;
+    </div>
+    `;
 
-    $('#hobbyBook').append(temp_html);
+    $('#hobbybook').append(temp_html);
 });
