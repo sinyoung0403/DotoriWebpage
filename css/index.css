@@ -210,3 +210,7 @@ a:link, a:visited {
 .mybtn>button {
     margin-right: 10px;
 }
+
+.card-body {
+    display: inline-block;
+}
