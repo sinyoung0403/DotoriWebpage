@@ -192,9 +192,136 @@ $(document).on("click","#scrumDeleteBtn",async function () {
 
 // Edit Div 창 띄우기
 $(document).on("click","#scrumEditBtn",async function () {
+    // 1. 해당 버튼을 누른 요소의 상위 id 값을 저장해야함.
+    let id = $(this).parent().parent().parent().parent().attr("id");
+    // 2. id 말고 다른 것도 불러오자. get 으로 .. 다 땡겨오자.
+    fetch(`https://firestore.googleapis.com/v1/projects/tododata-e3181/databases/(default)/documents/Scrum/${id}`, {
+        method: "GET",
+        headers: {
+            "x-goog-api-key": `AIzaSyC_AWLt1X27LrQB9j4H67Zf0N5v0Hc4Vig`
+        }
+    })
+    .then(response => response.json()) // json 으로 파싱.
+    .then(data => {
+        const cjGoal = data.fields.cjGoal.stringValue;
+        const cjcheck = data.fields.cjcheck.stringValue;
+        const date = data.fields.date.stringValue;
+        const ghGoal = data.fields.ghGoal.stringValue;
+        const ghcheck = data.fields.ghcheck.stringValue;
+        const id = data.fields.id.stringValue;
+        const syGoal = data.fields.syGoal.stringValue;
+        const sycheck = data.fields.sycheck.stringValue;
+        const teamAim = data.fields.teamAim.stringValue;
+    
+    let temp_html = `
+            <div class="mypostingbox" id="editBox" data-value="${id}">
+                <h3>데일리 스크럼 수정</h3>
+                <br>
+                <h3>오늘의 팀 목표</h3>
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="editteamAim"
+                        style="height: 100px">${teamAim}</textarea>
+                    <label for="teamAim">팀 목표</label>
+                </div>
+                <h3>팀원 개별 목표</h3>
+                <div class="form-floating">
+                    <input class="form-control" id="editghGoal" value="${ghGoal}">
+                    <label for="floatingInput">규현 목표</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input sycheckbox" type="checkbox" value="" id="ghEditCheckbox" ${ghcheck}>
+                        <label class="form-check-label" for="flexCheckDefault"> 규현 완료 여부 
+                        </label>
+                </div>
+                <div class="form-floating">
+                    <input class="form-control" id="editcjGoal" value="${cjGoal}">
+                    <label for="floatingInput"> 채진 목표</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input sycheckbox" type="checkbox" value="" id="cjEditCheckbox" ${cjcheck}>
+                        <label class="form-check-label" for="flexCheckDefault"> 채진 완료 여부 
+                        </label>
+                </div>
+                <div class="form-floating">
+                    <input class="form-control" id="editsjGoal" value="${syGoal}">
+                    <label for="floatingInput">신영 목표</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input sycheckbox" type="checkbox" value="" id="syEditCheckbox" ${sycheck}>
+                        <label class="form-check-label" for="flexCheckDefault"> 신영 완료 여부 
+                        </label>
+                </div>
+                <br>
+                <div class="mybtn">
+                    <!-- 수정하기 버튼 / 모달 작동 시키면 됩니다. -->
+                    <button id="EditBtn" type="button" class="btn btn-warning">수정하기</button>
+                    <button id="EditcloseBtn" type="button" class="btn btn-warning">닫기</button>
+                </div>
+            </div>
+    `
     $("#scrumEditDiv").show();
+    $("#scrumEditDiv").append(temp_html);
+    })
+})
+
+
+// 실제 수정하기 버튼을 눌렀을 시, 데이터를 Edit 해주기
+$(document).on("click","#EditBtn",async function () {
+    let id = $("#editBox").data("value");
+    let teamAim = $("#editteamAim").val();
+    let editghGoal = $("#editghGoal").val();
+    let editcjGoal = $("#editcjGoal").val();
+    let editsjGoal = $("#editsjGoal").val();
+    let ghcheck = " ";
+    let cjcheck = " ";
+    let sycheck = " ";
+    console.log(id);
+    if ($("#ghEditCheckbox").prop("checked")) {
+        ghcheck ="checked";
+    }
+    if ($("#cjEditCheckbox").prop("checked")) {
+        cjcheck ="checked";
+    }
+    if ($("#syEditCheckbox").prop("checked")) {
+        sycheck ="checked";
+    }
+    
+    // json 형태로 저장해두기
+    const updatedData = {
+        fields: {
+            teamAim: { stringValue: teamAim },
+            ghGoal: { stringValue: editghGoal },
+            cjGoal: { stringValue: editcjGoal },
+            syGoal: { stringValue: editsjGoal },
+            ghcheck: { stringValue: ghcheck },  
+            cjcheck: { stringValue: cjcheck }, 
+            sycheck: { stringValue: sycheck }   
+        }
+    };
+    console.log(updatedData)
+
+
+        // PATCH 요청으로 데이터 업데이트
+        fetch(`https://firestore.googleapis.com/v1/projects/tododata-e3181/databases/(default)/documents/Scrum/${id}`, {
+            method: "PATCH",
+            headers: {
+                "x-goog-api-key": `AIzaSyC_AWLt1X27LrQB9j4H67Zf0N5v0Hc4Vig`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updatedData)
+        })
+        .then(response => {
+            if (response.ok) {
+                location.reload(); // 페이지 새로고침
+            } else {
+                throw new Error("업데이트 실패");
+            }
+        })
+
+
 })
 
 $(document).on('click',"#EditcloseBtn", async function () {
     $("#scrumEditDiv").hide();
+    $("#editBox").remove();
 })
