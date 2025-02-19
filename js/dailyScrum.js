@@ -102,7 +102,7 @@ scrums.forEach(scrum=> {
                             </div>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <button class="btn btn-warning" type="button">삭제하기</button>
+                            <button id="scrumDeleteBtn" class="btn btn-warning" type="button">삭제하기</button>
                         </div>
                     </div>
                 </div>
@@ -110,6 +110,8 @@ scrums.forEach(scrum=> {
     `
     $("#accordionExample").append(temp_html);
 });
+
+
 
 // check 박스가 변경 되면 그걸 DB 에 연결해주어야함.
 $('.ghcheckbox').change(async function () {
@@ -146,7 +148,6 @@ $('.cjcheckbox').change(async function () {
     }
 });
 
-
 $('.sycheckbox').change(async function () {
     let id = $(this).parent().parent().parent().parent().parent().attr("id");
 
@@ -164,3 +165,28 @@ $('.sycheckbox').change(async function () {
         window.location.reload();
     }
 });
+
+// 삭제 버튼을 클릭했을 시,
+$(document).on("click","#scrumDeleteBtn",async function () {
+    let id = $(this).parent().parent().parent().parent().attr("id");
+
+
+    fetch(`https://firestore.googleapis.com/v1/projects/tododata-e3181/databases/(default)/documents/Scrum/${id}`, {
+        method: "DELETE",
+        headers: {
+            "x-goog-api-key": `AIzaSyC_AWLt1X27LrQB9j4H67Zf0N5v0Hc4Vig`
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log("삭제 완료!");
+            location.reload(); // 페이지 새로고침
+        } else {
+            console.error("삭제 실패:", response.statusText);
+        }
+    })
+    .catch(error => console.error("오류 발생:", error));
+})
+
+
+// Update 만들기
