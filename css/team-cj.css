@@ -11,31 +11,37 @@
 /* 헤더 */
 .nav,
 header {
-    background-color: #c0711779 !important;
+  background-color: #c0711779 !important;
 }
 
-header{
-    height: 80px ;
-}
 .navbar {
-    margin: 0px 20vh 0px 20vh;
-    height: 80px;
+  margin: 0px 20vh 0px 20vh;
+}
+
+.navbar {
+  height: 80px;
 }
 
 header a {
-    font-size: 40px;
-    font-weight: 800 !important;
-    text-decoration: none;
+  font-size: 30px !important;
+  font-weight: 800 !important;
+  text-decoration: none;
+  font-family: "Gowun Dodum", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
 }
 
 a:link,
 a:visited {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .btn {
-    background-color: rgba(255, 145, 0, 0.672) !important;
+  background-color: rgba(255, 145, 0, 0.672) !important;
+  font-size: large;
 }
 
 /* 인트로 이미지 */

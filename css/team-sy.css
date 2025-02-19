@@ -157,7 +157,7 @@ p{
 #text {
     opacity: 0;  /* 처음에는 보이지 않음 */
     text-align: center;
-    animation: fadeIn 2s ease-in-out forwards;  /* 애니메이션 설정 */
+    animation: fadeIn 1s ease-in-out forwards;  /* 애니메이션 설정 */
     margin-top: 20px;
 }
 
