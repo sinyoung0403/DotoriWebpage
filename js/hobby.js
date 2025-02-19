@@ -21,36 +21,17 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // DB 에 보내기
-   $(document).on('click',"#addhobbybtn", async function (){
+$("#addhobbybtn").click(async function () {
    let img = $('#img').val();
-    let title = $('#title').val();
-    let name = $('#name').val();
+    let hobby = $('#hobby').val();
+    let content = $('#content').val();
     let customId = Date.now().toString();
     const docRef = doc(db, "Dotorihobby", ustomId);
     await setDoc(docRef, {
         
         img: img,
-        title: title,
-        name: name
+        hobby: hobby,
+        content: content
     });
     window.location.reload();
 })
-
-let dotori = await getDocs(collection(db, "Dotorihobby"));
-dotori.forEach((coments) => {
-    let img = coments.data()['img'];
-    let title = coments.data()['title'];
-    let name = coments.data()['name'];
-    let temp_html = ``
-    temp_html = `
-    <div class="card" style="width: 18rem;">
-     <img src="${img}" class="card-img-top" alt="...">
-        <div class="card-body">
-         <p class="card-text"><strong>${title}</strong></p>
-         <p class="card-text">${name}(Spring_6기)</p>
-        </div>
-    </div>`;
-
-    $('#hobbybook').append(temp_html);
-});
-
