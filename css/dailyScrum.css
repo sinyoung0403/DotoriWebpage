@@ -31,7 +31,7 @@ a:link, a:visited {
 /**********************/
 /**** Input 부분 ****/
 /**********************/
-.mypostingbox {
+#plusBox {
     background-color: rgb(255, 247, 233);
     display: flex;
     flex-direction: column;
@@ -74,3 +74,28 @@ a:link, a:visited {
     border: 1px groove #c0711779 !important;
     border-radius: 2px !important;
 }
+
+/* 수정하기 박스 */
+#scrumEditDiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 30%);
+    z-index: 100 !important;
+}
+
+
+#editBox{
+        background-color: rgba(255, 255, 255, 0.897);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 30px auto;
+        border: 3px solid rgb(235, 186, 146);
+        border-radius: 20px;
+        width: 700px;
+        padding: 20px;
+        box-shadow: 5px 5px 5px 5px rgba(8, 8, 8, 0.39);
+}
+
