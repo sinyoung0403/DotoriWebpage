@@ -17,6 +17,7 @@
             $('#hobbybook').toggle();
         }
     </script>
+    <script type="module" src="./js/hobby.js"></script>
 </head>
 
 <body>
@@ -105,13 +106,13 @@
     </div>
 
     <!-- 취미 Input -->
-    <div class="mypostingbox" id="postingbox" style="display:show">
+    <div class="mypostingbox" id="postingbox">
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="name" placeholder="name@example.com">
+            <input type="email" class="form-control" id="img" placeholder="name@example.com">
             <label for="floatingInput">이미지 주소</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="name" placeholder="name@example.com">
+            <input type="email" class="form-control" id="hobby" placeholder="name@example.com">
             <label for="floatingInput">취미</label>
         </div>
         <div class="form-floating">
@@ -119,10 +120,12 @@
             <label for="floatingTextarea">내용</label>
         </div>
         <div class="mybtn">
-            <button id="saveBtn" type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addhobbyModal" id = "addhobbybtn">기록하기</button>
+            <button id="addhobbybtn" type="button" class="btn btn-dark">기록하기</button>
             <button type="button" class="btn btn-outline-info" onclick="openclose()">펼쳐보기</button>
         </div>
     </div>
+
+
     <!-- 취미 넣는 곳 -->
     <div class="mycards" id="hobbybook">
         <div id="hobbybook" class="row row-cols-1 row-cols-md-4 g-4">
