@@ -22,7 +22,9 @@ body{
 /**********************/
 /**** Header 부분 ****/
 /**********************/
-
+header{
+  height: 80px ;
+}
 .nav, header{
   background-color:#c0711779 !important;
 }
