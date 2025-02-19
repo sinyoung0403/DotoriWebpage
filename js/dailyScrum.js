@@ -102,6 +102,7 @@ scrums.forEach(scrum=> {
                             </div>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button id="scrumEditBtn" class="btn btn-warning" type="button">수정하기</button>
                             <button id="scrumDeleteBtn" class="btn btn-warning" type="button">삭제하기</button>
                         </div>
                     </div>
@@ -189,4 +190,11 @@ $(document).on("click","#scrumDeleteBtn",async function () {
 })
 
 
-// Update 만들기
+// Edit Div 창 띄우기
+$(document).on("click","#scrumEditBtn",async function () {
+    $("#scrumEditDiv").show();
+})
+
+$(document).on('click',"#EditcloseBtn", async function () {
+    $("#scrumEditDiv").hide();
+})
