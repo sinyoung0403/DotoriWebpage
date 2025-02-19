@@ -14,8 +14,12 @@ header {
     background-color: #c0711779 !important;
 }
 
+header{
+    height: 80px ;
+}
 .navbar {
     margin: 0px 20vh 0px 20vh;
+    height: 80px;
 }
 
 header a {

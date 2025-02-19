@@ -64,7 +64,7 @@ dotori.forEach((coments) => {
 
 // 방명록 삭제하기 
 $(document).on("click", "#guestDelete", async function () {
-    let id = $(this).parent().parent().parent().parent().attr("id");
+    let id = $(this).parent().parent().attr("id");
     $(document).on("click", "#deleteCommentBtn", async function () {
         const docRef = doc(db, "Dotori", id);
         await deleteDoc(docRef);
