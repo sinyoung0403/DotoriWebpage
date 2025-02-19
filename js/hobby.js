@@ -22,15 +22,35 @@ const db = getFirestore(app);
 
 // DB 에 보내기
 $("#addhobbybtn").click(async function () {
-   let img = $('#img').val();
+    let img = $('#img').val();
     let hobby = $('#hobby').val();
-    let content = $('#content').val();
+    let name = $('#name').val();
     let customId = Date.now().toString();
     const docRef = doc(db, "Dotorihobby", customId);
     await setDoc(docRef, {
+
         img: img,
         hobby: hobby,
-        content: content
+        name: name
     });
     window.location.reload();
 })
+
+// 화면에 띄우기
+let dotorihobby = await getDocs(collection(db, "Dotorihobby"));
+dotorihobby.forEach(coments => {
+    let img = coments.data()['#img'];
+    let hobby = coments.data()['#hobby'];
+    let name= coments.data()['#name'];
+    let temp_html = ``
+    temp_html = `
+    <div class="card" style="width: 18rem;">
+        <img src="${img}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <p class="card-text"><strong>${hobby}</strong></p>
+        <p class="card-text">${name}(Spring_6기)</p>
+    </div>
+    `;
+
+    $('#hobbybook').append(temp_html);
+});
