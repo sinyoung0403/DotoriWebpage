@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gamja+Flower&family=Gowun+Dodum&display=swap');
+
+
+* {
+    font-family: 'Gowun Dodum', sans-serif;
+}
+
+/*header main 부분*/
+header {
+    background-color: #c0711779 !important;
+    height: 80px;
+    width: 100%;
+}
+
+
+header a {
+    margin: 0px 30px 0px 100px;
+    font-size: 30px !important;
+    font-weight: 800 !important;
+    text-decoration: none;
+    line-height: 2;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+.title {
+    width: 1861px;
+    /*따로*/
+    height: 76px;
+    /* */
+    font-size: 30px;
+    font-weight: 800 !important;
+    text-decoration: none;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.maintitle {
+    background-image: url(https://search.pstatic.net/sunny/?src=https%3A%2F%2Fpng.pngtree.com%2Fthumb_back%2Ffw800%2Fbackground%2F20221202%2Fpngtree-acorns-and-acorn-leaves-seamless-autumn-pattern-vector-illustration-image_1489795.jpg&type=a340);
+    margin: 0px 0px 10px 0px;
+    height: 280px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-title {
+    color: black;
+    /* 텍스트 색상 */
+    background: white;
+    /* 배경 */
+    padding: 20px;
+    /* 여백 */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    /* 그림자 */
+    border-radius: 40px;
+    display: inline-block;
+    font-family: "Gamja Flower", serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-title h2 {
+    font-size: 50px;
+    font-weight: 700;
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+/*캐러셀 부분*/
+
+#introcarouse {
+    background-color: #ffd2775e !important;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.carousel-item {
+    height: 600px;
+
+}
+
+.carousel-item p {
+    font-size: large;
+}
+
+.introCard {
+    border: 1px solid rgba(216, 216, 216, 0.726) !important;
+    margin: 50px;
+}
+
+.card-group {
+    margin: 0px 100px 0px 100px;
+}
+
+.card {
+    margin: auto auto 50px auto;
+    font-family: "Gowun Dodum", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*기록하기  펼쳐보기*/
+.btn {
+    border: 1px solid black;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.d-block {
+    height: 300px;
+    overflow: hidden;
+}
+
+
+.more_btn {
+    margin: 0px 0px 0px 475px;
+
+    color: skyblue;
+    border: 1px solid skyblue;
+    border-radius: 5px
+}
+
+.mycards {
+    margin: 20px auto 20px auto;
+    width: 1200px;
+}
+
+.mypostingbox {
+    width: 500px;
+    margin: 20px auto 20px auto;
+    padding: 20px 20px 20px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px 0px grey;
+}
+
+.mybtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 10px;
+}
+
+.mybtn>button {
+    margin-right: 10px;
+}

@@ -80,90 +80,41 @@ scrums.forEach(scrum => {
                             <h5>오늘의 팀 목표</h5>
                             <p>${teamAim}</p>
                         </div>
+                        <br>
                         <div>
                             <h5>개별 목표 달성 여부</h5>
-                            <div class="form-check">
-                                <input class="form-check-input ghcheckbox" type="checkbox" value="" id="flexCheckDefault" ${ghcheck} disabled>
+                            <div  id="goalGap"></div>
+                            <h6>규현님 목표) </h6>
+                            <div class="form-check stack-check">
+                                <input class="form-check-input ghcheckbox" type="checkbox" value="" id="flexCheckDefault" style="pointer-events: none;" ${ghcheck}>
                                 <label class="form-check-label" for="flexCheckDefault">
                                     ${ghGoal}
                                 </label>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input cjcheckbox"  type="checkbox" value="" id="flexCheckDefault" ${cjcheck} disabled>
+                            <h6>채진님 목표) </h6>
+                            <div class="form-check stack-check">
+                                <input class="form-check-input cjcheckbox"  type="checkbox" value="" id="flexCheckDefault" style="pointer-events: none;" ${cjcheck} >
                                 <label class="form-check-label" for="flexCheckDefault">
                                     ${cjGoal}
                                 </label>
                             </div>
-                            <div class="form-check">
-                                <input class="form-check-input sycheckbox" type="checkbox" value="" id="flexCheckDefault" ${sycheck}>
+                            <h6>신영님 목표) </h6>
+                            <div class="form-check stack-check">
+                                <input class="form-check-input sycheckbox" type="checkbox" value="" id="flexCheckDefault" style="pointer-events: none;" ${sycheck}>
                                 <label class="form-check-label" for="flexCheckDefault">
                                     ${syGoal}
                                 </label>
                             </div>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <button id="scrumDeleteBtn" class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#deleteScrumModal">삭제하기</button>
+                            <button id="scrumEditBtn" class="btn btn-warning" type="button">수정하기</button>
+                            <button id="scrumDeleteBtn" class="btn btn-warning" type="button">삭제하기</button>
                         </div>
                     </div>
                 </div>
             </div>    
     `
     $("#accordionExample").append(temp_html);
-});
-
-
-
-// check 박스가 변경 되면 그걸 DB 에 연결해주어야함.
-$('.ghcheckbox').change(async function () {
-    let id = $(this).parent().parent().parent().parent().parent().attr("id");
-    const docRef = doc(db, "Scrum", id);
-    if ($(this).is(':checked')) {
-        await updateDoc(docRef, {
-            ghcheck: "checked"
-        });
-        window.location.reload();
-    } else {
-        await updateDoc(docRef, {
-            ghcheck: " "
-        });
-        window.location.reload();
-    }
-});
-
-$('.cjcheckbox').change(async function () {
-    let id = $(this).parent().parent().parent().parent().parent().attr("id");
-
-    const docRef = doc(db, "Scrum", id);
-    if ($(this).is(':checked')) {
-        await updateDoc(docRef, {
-            cjcheck: "checked"
-        });
-        window.location.reload();
-
-    } else {
-        await updateDoc(docRef, {
-            cjcheck: " "
-        });
-        window.location.reload();
-    }
-});
-
-$('.sycheckbox').change(async function () {
-    let id = $(this).parent().parent().parent().parent().parent().attr("id");
-
-    const docRef = doc(db, "Scrum", id);
-    if ($(this).is(':checked')) {
-        await updateDoc(docRef, {
-            sycheck: "checked"
-        });
-        window.location.reload();
-
-    } else {
-        await updateDoc(docRef, {
-            sycheck: " "
-        });
-        window.location.reload();
-    }
 });
 
 // 삭제 버튼을 클릭했을 시,
@@ -190,4 +141,157 @@ $(document).on("click", "#scrumDeleteBtn", async function () {
 })
 
 
-// Update 만들기
+// Edit Div 창 띄우기
+$(document).on("click", "#scrumEditBtn", async function () {
+    // 1. 해당 버튼을 누른 요소의 상위 id 값을 저장해야함.
+    let id = $(this).parent().parent().parent().parent().attr("id");
+    // 2. id 말고 다른 것도 불러오자. get 으로 .. 다 땡겨오자.
+    fetch(`https://firestore.googleapis.com/v1/projects/tododata-e3181/databases/(default)/documents/Scrum/${id}`, {
+        method: "GET",
+        headers: {
+            "x-goog-api-key": `AIzaSyC_AWLt1X27LrQB9j4H67Zf0N5v0Hc4Vig`
+        }
+    })
+        .then(response => response.json()) // json 으로 파싱.
+        .then(data => {
+            const cjGoal = data.fields.cjGoal.stringValue;
+            const cjcheck = data.fields.cjcheck.stringValue;
+            const date = data.fields.date.stringValue;
+            const ghGoal = data.fields.ghGoal.stringValue;
+            const ghcheck = data.fields.ghcheck.stringValue;
+            const id = data.fields.id.stringValue;
+            const syGoal = data.fields.syGoal.stringValue;
+            const sycheck = data.fields.sycheck.stringValue;
+            const teamAim = data.fields.teamAim.stringValue;
+
+            let temp_html = `
+            <div class="mypostingbox" id="editBox" data-value="${id}">
+                <h3>데일리 스크럼 수정</h3>
+                <br>
+                <h3>오늘의 팀 목표</h3>
+                <div class="form-floating" id="editBoxdatevalue"  data-value ="${date}">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="editteamAim"
+                        style="height: 100px" >${teamAim}</textarea>
+                    <label for="teamAim">팀 목표</label>
+                </div>
+                <h3>팀원 개별 목표</h3>
+                <div class="form-floating">
+                    <input class="form-control" id="editghGoal" value="${ghGoal}">
+                    <label for="floatingInput">규현 목표</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input sycheckbox" type="checkbox" value="" id="ghEditCheckbox" ${ghcheck}>
+                        <label class="form-check-label" for="flexCheckDefault"> 규현 완료 여부 
+                        </label>
+                </div>
+                <div class="form-floating">
+                    <input class="form-control" id="editcjGoal" value="${cjGoal}">
+                    <label for="floatingInput"> 채진 목표</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input sycheckbox" type="checkbox" value="" id="cjEditCheckbox" ${cjcheck}>
+                        <label class="form-check-label" for="flexCheckDefault"> 채진 완료 여부 
+                        </label>
+                </div>
+                <div class="form-floating">
+                    <input class="form-control" id="editsyGoal" value="${syGoal}">
+                    <label for="floatingInput">신영 목표</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input sycheckbox" type="checkbox" value="" id="syEditCheckbox" ${sycheck}>
+                        <label class="form-check-label" for="flexCheckDefault"> 신영 완료 여부 
+                        </label>
+                </div>
+                <br>
+                <div class="mybtn">
+                    <!-- 수정하기 버튼 / 모달 작동 시키면 됩니다. -->
+                    <button id="EditBtn" type="button" class="btn btn-warning">수정하기</button>
+                    <button id="EditcloseBtn" type="button" class="btn btn-warning">닫기</button>
+                </div>
+            </div>
+    `
+            $("#scrumEditDiv").show();
+            $("#scrumEditDiv").append(temp_html);
+        })
+})
+
+
+// 실제 수정하기 버튼을 눌렀을 시, 데이터를 Edit 해주기
+$(document).on("click", "#EditBtn", async function () {
+    let id = $("#editBox").data("value");
+    let teamAim = $("#editteamAim").val();
+    let editghGoal = $("#editghGoal").val();
+    let editcjGoal = $("#editcjGoal").val();
+    let editsyGoal = $("#editsyGoal").val();
+    let date = $("#editBoxdatevalue").data("value");
+    let ghcheck = " ";
+    let cjcheck = " ";
+    let sycheck = " ";
+    console.log(date);
+    if ($("#ghEditCheckbox").prop("checked")) {
+        ghcheck = "checked";
+    }
+    if ($("#cjEditCheckbox").prop("checked")) {
+        cjcheck = "checked";
+    }
+    if ($("#syEditCheckbox").prop("checked")) {
+        sycheck = "checked";
+    }
+    console.log(sycheck)
+
+    // json 형태로 저장해두기
+    const fieldsToUpdate = {
+        fields: {
+            date: { stringValue: date },
+            teamAim: { stringValue: teamAim },
+            ghGoal: { stringValue: editghGoal },
+            cjGoal: { stringValue: editcjGoal },
+            syGoal: { stringValue: editsyGoal },
+            ghcheck: { stringValue: ghcheck },
+            cjcheck: { stringValue: cjcheck },
+            sycheck: { stringValue: sycheck }
+        }
+    };
+
+
+    // 업데이트할 필드 목록 만들기
+    const updateMask = Object.keys(fieldsToUpdate)
+        .map(field => `fields.${field}`)
+        .join(",");
+
+
+    // PATCH 요청으로 데이터 업데이트
+    fetch(`https://firestore.googleapis.com/v1/projects/tododata-e3181/databases/(default)/documents/Scrum/${id}?`+`updateMask.fieldPaths=date&updateMask.fieldPaths=teamAim&updateMask.fieldPaths=ghGoal&` +
+      `updateMask.fieldPaths=cjGoal&updateMask.fieldPaths=syGoal&updateMask.fieldPaths=ghcheck&` +
+      `updateMask.fieldPaths=cjcheck&updateMask.fieldPaths=sycheck`, {
+        method: "PATCH",
+        headers: {
+            "x-goog-api-key": `AIzaSyC_AWLt1X27LrQB9j4H67Zf0N5v0Hc4Vig`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            fields: {
+                date: { stringValue: date },
+                teamAim: { stringValue: teamAim },
+                ghGoal: { stringValue: editghGoal },
+                cjGoal: { stringValue: editcjGoal },
+                syGoal: { stringValue: editsyGoal },
+                ghcheck: { stringValue: ghcheck },
+                cjcheck: { stringValue: cjcheck },
+                sycheck: { stringValue: sycheck }
+            }
+        })
+    })
+        .then(response => {
+            if (response.ok) {
+                location.reload(); // 페이지 새로고침
+            } else {
+                throw new Error("업데이트 실패");
+            }
+        })
+})
+
+$(document).on('click', "#EditcloseBtn", async function () {
+    $("#scrumEditDiv").hide();
+    $("#editBox").remove();
+})

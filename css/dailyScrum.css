@@ -16,7 +16,7 @@ header{
 
   
 header a{
-    margin: 0px 30px 0px 30px ;
+    margin: 0px 30px 0px 100px ;
     font-size:30px;
     font-weight: 800 !important;
     text-decoration: none;
@@ -31,7 +31,7 @@ a:link, a:visited {
 /**********************/
 /**** Input 부분 ****/
 /**********************/
-.mypostingbox {
+#plusBox {
     background-color: rgb(255, 247, 233);
     display: flex;
     flex-direction: column;
@@ -73,4 +73,53 @@ a:link, a:visited {
     margin-bottom: 10px;
     border: 1px groove #c0711779 !important;
     border-radius: 2px !important;
+}
+
+#goalGap{
+    width: 10px;
+    height: 20px;
+}
+.stack-check{
+    margin-bottom: 10px !important;
+}
+
+.form-check-input{
+    color:black !important
+}
+
+.accordion-item h6{
+    font-weight: 500 !important;
+}
+
+.accordion-button{
+    font-weight: 600;
+}
+
+.accordion-item h5{
+    font-weight: 700;
+}
+
+
+/* 수정하기 박스 */
+#scrumEditDiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 30%);
+    z-index: 100 !important;
+}
+
+
+#editBox{
+        background-color: rgba(255, 255, 255, 0.897);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 30px auto;
+        border: 3px solid rgb(235, 186, 146);
+        border-radius: 20px;
+        width: 700px;
+        padding: 20px;
+        box-shadow: 5px 5px 5px 5px rgba(8, 8, 8, 0.39);
 }
