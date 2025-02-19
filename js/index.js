@@ -51,9 +51,10 @@ dotori.forEach((coments) => {
                 <h5 class="card-title">${name}</h5>
                 <p class="card-text">${content}</p>
             </div>
-            <div class="card-footer">
-                <small class="text-muted"><button id="guestDelete" data-bs-toggle="modal" data-bs-target="#delCommentModal">삭제</button></small>
-            </div>
+            <button id="guestDelete" data-bs-toggle="modal" data-bs-target="#delCommentModal">
+                <div class="card-footer">삭제
+                </div>
+            </button>
         </div>
     </div>`;
 

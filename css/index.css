@@ -210,3 +210,8 @@ a:link, a:visited {
 .mybtn>button {
     margin-right: 10px;
 }
+
+#guestDelete{
+    border: none;
+    background-color: none;
+}
