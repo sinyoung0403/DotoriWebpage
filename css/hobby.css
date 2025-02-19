@@ -165,3 +165,8 @@ a:visited {
 .mybtn>button {
     margin-right: 10px;
 }
+
+/*카드 이미지*/
+.card > img {
+    object-fit: cover;
+}

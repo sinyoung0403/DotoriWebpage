@@ -46,7 +46,7 @@ dotorihobby.forEach(coments => {
     let temp_html = ``
     console.log(id,img,hobby,name);
     temp_html = ` 
-    <div class="hobbycard" style="width: 18rem;" data-value= "${id}" >
+    <div class="card" style="width: 18rem;" data-value= "${id}" id ="hobbycard">
         <img src="${img}" class="card-img-top" alt="...">
         <div class="card-body">
             <p class="card-text"><strong>${hobby}</strong></p>
@@ -62,7 +62,7 @@ dotorihobby.forEach(coments => {
 // 취미 삭제하기
 
 $(document).on("click", "#hobbyDelete", async function () {
-    let id = $(".hobbycard").data("value").toString();
+    let id = $("#hobbycard").data("value").toString();
     const docRef = doc(db, "Dotorihobby", id);
     await deleteDoc(docRef);
     window.location.reload();
