@@ -5,26 +5,28 @@
 * {
     font-family: 'Gowun Dodum', sans-serif;
 }
-    /*header main 부분*/
-    header {
-        background-color: #c0711779 !important;
-        height: 80px;
-        width: 100%;
-    }
+
+/*header main 부분*/
+header {
+    background-color: #c0711779 !important;
+    height: 80px;
+    width: 100%;
+}
 
 
-    header a {
-        margin: 0px 30px 0px 100px;
-        font-size: 30px;
-        font-weight: 800 !important;
-        text-decoration: none;
-        line-height: 2;
-    }
+header a {
+    margin: 0px 30px 0px 100px;
+    font-size: 30px !important;
+    font-weight: 800 !important;
+    text-decoration: none;
+    line-height: 2;
+}
 
-    a:link, a:visited {
-        text-decoration: none;
-        color: inherit;
-    }
+a:link,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
 
 
 
