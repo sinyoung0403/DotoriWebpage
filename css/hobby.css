@@ -1,42 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gamja+Flower&family=Gowun+Dodum&display=swap');
 
+
 * {
     font-family: 'Gowun Dodum', sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
-  }
-  
-
-/**********************/
-/**** Header 부분 ****/
-/**********************/
-header{
+/*header main 부분*/
+  .nav, header{
     background-color:#c0711779 !important;
-    height: 80px ;
-    width: 100%;
   }
-
+  .navbar{
+    margin: 0px 20vh 0px 20vh;
+  }
+  .navbar-brand{
+    
+  }
   
-header a{
-    margin: 0px 30px 0px 100px ;
+  header a{
+    font-size:40px;
+    font-weight: 800 !important;
+    text-decoration: none;
+    font-family: "Gowun Dodum", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+  }
+  
+  a:link, a:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .btn{
+    background-color: rgba(255, 145, 0, 0.672) !important;
+  }
+  
+
+.title{
+    
+    width: 1861px; /*따로*/
+    height: 76px;  /* */
     font-size:30px;
     font-weight: 800 !important;
     text-decoration: none;
     line-height: 2;
-  }
-  
-a:link, a:visited {
-    text-decoration: none;
-    color: inherit;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
 
 
-/**********************/
-/**** 소갯말 부분분 ****/
-/**********************/
 .maintitle {
     background-image: url(https://search.pstatic.net/sunny/?src=https%3A%2F%2Fpng.pngtree.com%2Fthumb_back%2Ffw800%2Fbackground%2F20221202%2Fpngtree-acorns-and-acorn-leaves-seamless-autumn-pattern-vector-illustration-image_1489795.jpg&type=a340);
     margin: 0px 0px 10px 0px;
@@ -68,83 +83,17 @@ a:link, a:visited {
     text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
-
-
-/**********************/
-/**** 팀 소개, 팀 목표, 팀 약속 적는 부분 ****/
-/**********************/
-
-.teamintro-title{
-    color: black; /* 텍스트 색상 */
-    background: white; /* 배경 */
-    padding: 20px; /* 여백 */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* 그림자 */
-    border-radius: 40px;
-    display: inline-block; /* 텍스트 크기만큼 배경 적용 */
-    font-family: "Gamja Flower", serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-}
-#teamintro-title-div{
-    width: 400px;
-    margin: 80px auto auto auto;
-}
-
-.card-title{
-    font-size: 30px;
-    font-weight: 800;
-    margin: 0px !important;
-}
-
-.card-body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-
-/**********************/
-/**** 방명록 부분분 ****/
-/**********************/
-
-
-
-#addBtn{
-    width: 400px;
-    height: 82.64px;
-    color: black; /* 텍스트 색상 */
-    background: white; /* 배경 */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* 그림자 */
-    border-radius: 40px;
-    display: inline-block; /* 텍스트 크기만큼 배경 적용 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    font-size: 35px;
-}
-
-#addbtn-div{
-    width: 400px;
-    margin: 80px auto 30px auto;
-}
-
-#carouselExampleDark {
-    margin: auto;
-    width: 70%;
-}
+/*캐러셀 부분*/
 
 #introcarouse{
     background-color:#ffd2775e !important;
     padding-bottom: 20px;
+    margin-bottom: 20px;
 }
+
 .carousel-item {
-    height: 300px;
+    height: 600px;
+    
 }
 
 .carousel-item p{
@@ -159,8 +108,14 @@ a:link, a:visited {
 .card-group{
     margin: 0px 100px 0px 100px;
 }
+.card {
+    margin: auto auto 50px auto ;
+    font-family: "Gowun Dodum", serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
-
+/*기록하기  펼쳐보기*/
 .btn {
     border: 1px solid black;
     border-radius: 2px;
@@ -209,4 +164,19 @@ a:link, a:visited {
 
 .mybtn>button {
     margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
