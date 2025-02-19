@@ -30,7 +30,7 @@ function getTodayDate() {
 }
 
 // DB 에 보내기
-$("#scrumBtn").click(async function () {
+$("#addScrumBtn").click(async function () {
     let teamAim = $('#teamAim').val();
     let ghGoal = $('#ghGoal').val();
     let cjGoal = $('#cjGoal').val();

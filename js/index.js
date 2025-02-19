@@ -22,7 +22,7 @@ const db = getFirestore(app);
 
 
 // DB 에 보내기
-$("#cardBtn").click(async function () {
+$("#addCommentBtn").click(async function () {
     let name = $('#name').val();
     let content = $('#content').val();
     let customId = Date.now().toString();
@@ -52,7 +52,7 @@ dotori.forEach((coments) => {
                 <p class="card-text">${content}</p>
             </div>
             <div class="card-footer">
-                <small class="text-muted"><button id="guestDelete">삭제</button></small>
+                <small class="text-muted"><button id="guestDelete" data-bs-toggle="modal" data-bs-target="#delCommentModal">삭제</button></small>
             </div>
         </div>
     </div>`;
@@ -62,11 +62,13 @@ dotori.forEach((coments) => {
 
 
 // 방명록 삭제하기 
-$(document).on("click","#guestDelete", async function () {
+$(document).on("click", "#guestDelete", async function () {
     let id = $(this).parent().parent().parent().parent().attr("id");
-    const docRef = doc(db, "Dotori", id);
-    await deleteDoc(docRef); 
-    window.location.reload();
+    $(document).on("click", "#deleteCommentBtn", async function () {
+        const docRef = doc(db, "Dotori", id);
+        await deleteDoc(docRef);
+        window.location.reload();
+    })
 })
 
 
@@ -78,4 +80,4 @@ fetch(apiUrl)
         var description = data.weather[0].description;
         $('#tempInfo').text(temperature);
         $('#weatherInfo').text(description);
-})
+    })
