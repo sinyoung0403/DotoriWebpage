@@ -108,7 +108,7 @@ scrums.forEach(scrum => {
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <button id="scrumEditBtn" class="btn btn-warning" type="button">수정하기</button>
-                            <button id="scrumDeleteBtn" class="btn btn-warning" type="button">삭제하기</button>
+                            <button id="scrumDeleteBtn" class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#deleteScrumModal">삭제하기</button>
                         </div>
                     </div>
                 </div>
@@ -121,22 +121,23 @@ scrums.forEach(scrum => {
 $(document).on("click", "#scrumDeleteBtn", async function () {
     let id = $(this).parent().parent().parent().parent().attr("id");
 
-
-    fetch(`https://firestore.googleapis.com/v1/projects/tododata-e3181/databases/(default)/documents/Scrum/${id}`, {
-        method: "DELETE",
-        headers: {
-            "x-goog-api-key": `AIzaSyC_AWLt1X27LrQB9j4H67Zf0N5v0Hc4Vig`
-        }
-    })
-        .then(response => {
-            if (response.ok) {
-                console.log("삭제 완료!");
-                location.reload(); // 페이지 새로고침
-            } else {
-                console.error("삭제 실패:", response.statusText);
+    $(document).on("click", "#deleteScrumBtn", async function () {
+        fetch(`https://firestore.googleapis.com/v1/projects/tododata-e3181/databases/(default)/documents/Scrum/${id}`, {
+            method: "DELETE",
+            headers: {
+                "x-goog-api-key": `AIzaSyC_AWLt1X27LrQB9j4H67Zf0N5v0Hc4Vig`
             }
         })
-        .catch(error => console.error("오류 발생:", error));
+            .then(response => {
+                if (response.ok) {
+                    console.log("삭제 완료!");
+                    location.reload(); // 페이지 새로고침
+                } else {
+                    console.error("삭제 실패:", response.statusText);
+                }
+            })
+            .catch(error => console.error("오류 발생:", error));
+    });
 })
 
 
@@ -204,7 +205,7 @@ $(document).on("click", "#scrumEditBtn", async function () {
                 <br>
                 <div class="mybtn">
                     <!-- 수정하기 버튼 / 모달 작동 시키면 됩니다. -->
-                    <button id="EditBtn" type="button" class="btn btn-warning">수정하기</button>
+                    <button id="EditBtn" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editScrumModal">수정하기</button>
                     <button id="EditcloseBtn" type="button" class="btn btn-warning">닫기</button>
                 </div>
             </div>
@@ -258,36 +259,38 @@ $(document).on("click", "#EditBtn", async function () {
         .map(field => `fields.${field}`)
         .join(",");
 
+    $(document).on("click", "#editScrumBtn", async function () {
+        // PATCH 요청으로 데이터 업데이트
+        fetch(`https://firestore.googleapis.com/v1/projects/tododata-e3181/databases/(default)/documents/Scrum/${id}?` + `updateMask.fieldPaths=date&updateMask.fieldPaths=teamAim&updateMask.fieldPaths=ghGoal&` +
+            `updateMask.fieldPaths=cjGoal&updateMask.fieldPaths=syGoal&updateMask.fieldPaths=ghcheck&` +
+            `updateMask.fieldPaths=cjcheck&updateMask.fieldPaths=sycheck`, {
+            method: "PATCH",
+            headers: {
+                "x-goog-api-key": `AIzaSyC_AWLt1X27LrQB9j4H67Zf0N5v0Hc4Vig`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fields: {
+                    date: { stringValue: date },
+                    teamAim: { stringValue: teamAim },
+                    ghGoal: { stringValue: editghGoal },
+                    cjGoal: { stringValue: editcjGoal },
+                    syGoal: { stringValue: editsyGoal },
+                    ghcheck: { stringValue: ghcheck },
+                    cjcheck: { stringValue: cjcheck },
+                    sycheck: { stringValue: sycheck }
+                }
+            })
+        })
 
-    // PATCH 요청으로 데이터 업데이트
-    fetch(`https://firestore.googleapis.com/v1/projects/tododata-e3181/databases/(default)/documents/Scrum/${id}?`+`updateMask.fieldPaths=date&updateMask.fieldPaths=teamAim&updateMask.fieldPaths=ghGoal&` +
-      `updateMask.fieldPaths=cjGoal&updateMask.fieldPaths=syGoal&updateMask.fieldPaths=ghcheck&` +
-      `updateMask.fieldPaths=cjcheck&updateMask.fieldPaths=sycheck`, {
-        method: "PATCH",
-        headers: {
-            "x-goog-api-key": `AIzaSyC_AWLt1X27LrQB9j4H67Zf0N5v0Hc4Vig`,
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            fields: {
-                date: { stringValue: date },
-                teamAim: { stringValue: teamAim },
-                ghGoal: { stringValue: editghGoal },
-                cjGoal: { stringValue: editcjGoal },
-                syGoal: { stringValue: editsyGoal },
-                ghcheck: { stringValue: ghcheck },
-                cjcheck: { stringValue: cjcheck },
-                sycheck: { stringValue: sycheck }
-            }
-        })
+            .then(response => {
+                if (response.ok) {
+                    location.reload(); // 페이지 새로고침
+                } else {
+                    throw new Error("업데이트 실패");
+                }
+            })
     })
-        .then(response => {
-            if (response.ok) {
-                location.reload(); // 페이지 새로고침
-            } else {
-                throw new Error("업데이트 실패");
-            }
-        })
 })
 
 $(document).on('click', "#EditcloseBtn", async function () {

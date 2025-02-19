@@ -75,7 +75,6 @@
         </div>
 
 
-
     <!-- 스크럼 생성 모달 -->
     <div class="modal fade" id="addScrumModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -95,8 +94,63 @@
             </div>
         </div>
     </div>
+
+    <!-- 스크럼 수정 모달 -->
+    <div class="modal fade" id="updateScrumModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">데일리 스크럼 수정</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    데일리 스크럼을 수정하시겠습니까?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-primary" id="updateScrumBtn">수정하기</button>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- 스크럼 삭제 모달 -->
+    <div class="modal fade" id="deleteScrumModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">데일리 스크럼 삭제</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    데일리 스크럼을 삭제하시겠습니까?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-primary" id="deleteScrumBtn">삭제하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 스크럼 수정 모달 -->
+    <div class="modal fade" id="editScrumModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">데일리 스크럼 수정</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    데일리 스크럼을 수정하시겠습니까?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-primary" id="editScrumBtn">수정하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
