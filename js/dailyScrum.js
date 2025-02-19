@@ -14,7 +14,7 @@ const firebaseConfig = {
     messagingSenderId: "133114291716",
     appId: "1:133114291716:web:0485a5fb4b197dbf563751",
     measurementId: "G-SZE4X10TDF"
-};
+}
 
 // Firebase 인스턴스 초기화
 const app = initializeApp(firebaseConfig);
