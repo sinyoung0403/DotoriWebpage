@@ -108,7 +108,7 @@ scrums.forEach(scrum => {
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <button id="scrumEditBtn" class="btn btn-warning" type="button">수정하기</button>
-                            <button id="scrumDeleteBtn" class="btn btn-warning" type="button">삭제하기</button>
+                            <button id="scrumDeleteBtn" class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#deleteScrumModal">삭제하기</button>
                         </div>
                     </div>
                 </div>
