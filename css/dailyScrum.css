@@ -75,6 +75,31 @@ a:link, a:visited {
     border-radius: 2px !important;
 }
 
+#goalGap{
+    width: 10px;
+    height: 20px;
+}
+.stack-check{
+    margin-bottom: 10px !important;
+}
+
+.form-check-input{
+    color:black !important
+}
+
+.accordion-item h6{
+    font-weight: 500 !important;
+}
+
+.accordion-button{
+    font-weight: 600;
+}
+
+.accordion-item h5{
+    font-weight: 700;
+}
+
+
 /* 수정하기 박스 */
 #scrumEditDiv {
     position: absolute;
@@ -98,4 +123,3 @@ a:link, a:visited {
         padding: 20px;
         box-shadow: 5px 5px 5px 5px rgba(8, 8, 8, 0.39);
 }
-
