@@ -27,8 +27,8 @@ $("#addhobbybtn").click(async function () {
     let name = $('#name').val();
     let customId = Date.now().toString();
     const docRef = doc(db, "Dotorihobby", customId);
-    await setDoc(docRef, {
-
+    await setDoc(docRef,  {
+        id : customId,
         img: img,
         hobby: hobby,
         name: name
@@ -40,19 +40,30 @@ $("#addhobbybtn").click(async function () {
 let dotorihobby = await getDocs(collection(db, "Dotorihobby"));
 dotorihobby.forEach(coments => {
     let id = coments.data()['id'];
-    let img = coments.data()['#img'];
-    let hobby = coments.data()['#hobby'];
-    let name= coments.data()['#name'];
+    let img = coments.data()['img'];
+    let hobby = coments.data()['hobby'];
+    let name = coments.data()['name'];
     let temp_html = ``
-    temp_html = `
-    <div class="card" style="width: 18rem;" data-value= "${id}" >
+    console.log(id);
+    temp_html = ` 
+    <div class="hobbycard" style="width: 18rem;" data-value= "${id}" >
         <img src="${img}" class="card-img-top" alt="...">
         <div class="card-body">
         <p class="card-text"><strong>${hobby}</strong></p>
         <p class="card-text">${name}(Spring_6기)</p>
-        <button type="button" class="btn btn-dark">삭제하기</button>
+        <button id ="hobbyDelete" type="button" class="btn btn-dark">삭제하기</button>
     </div>
     `;
 
     $('#hobbybook').append(temp_html);
 });
+
+// 취미 삭제하기
+
+$(document).on("click", "#hobbyDelete", async function () {
+    let id = $(".hobbycard").data("value");
+    console.log(id);
+    const docRef = doc(db, "Dotorihobby", id);
+    await deleteDoc(docRef);
+})
+
