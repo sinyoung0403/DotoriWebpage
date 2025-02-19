@@ -39,16 +39,18 @@ $("#addhobbybtn").click(async function () {
 // 화면에 띄우기
 let dotorihobby = await getDocs(collection(db, "Dotorihobby"));
 dotorihobby.forEach(coments => {
+    let id = coments.data()['id'];
     let img = coments.data()['#img'];
     let hobby = coments.data()['#hobby'];
     let name= coments.data()['#name'];
     let temp_html = ``
     temp_html = `
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 18rem;" data-value= "${id}" >
         <img src="${img}" class="card-img-top" alt="...">
         <div class="card-body">
         <p class="card-text"><strong>${hobby}</strong></p>
         <p class="card-text">${name}(Spring_6기)</p>
+        <button type="button" class="btn btn-dark">기록하기</button>
     </div>
     `;
 
