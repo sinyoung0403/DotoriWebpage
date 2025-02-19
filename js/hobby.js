@@ -21,13 +21,14 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // DB 에 보내기
-$(document).on("click","#addhobbybtn", async function (){
+   $(document).on('click',"#addhobbybtn", async function (){
    let img = $('#img').val();
     let title = $('#title').val();
     let name = $('#name').val();
     let customId = Date.now().toString();
-    const docRef = doc(db, "Dotorihobby", customId);
+    const docRef = doc(db, "Dotorihobby", ustomId);
     await setDoc(docRef, {
+        
         img: img,
         title: title,
         name: name
