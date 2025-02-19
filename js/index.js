@@ -51,9 +51,10 @@ dotori.forEach((coments) => {
                 <h5 class="card-title">${name}</h5>
                 <p class="card-text">${content}</p>
             </div>
-            <div class="card-footer">
-                <small class="text-muted"><button id="guestDelete" data-bs-toggle="modal" data-bs-target="#delCommentModal">삭제</button></small>
-            </div>
+            <button id="guestDelete" data-bs-toggle="modal" data-bs-target="#delCommentModal">
+                <div class="card-footer">삭제
+                </div>
+            </button>
         </div>
     </div>`;
 
@@ -63,7 +64,7 @@ dotori.forEach((coments) => {
 
 // 방명록 삭제하기 
 $(document).on("click", "#guestDelete", async function () {
-    let id = $(this).parent().parent().parent().parent().attr("id");
+    let id = $(this).parent().parent().attr("id");
     $(document).on("click", "#deleteCommentBtn", async function () {
         const docRef = doc(db, "Dotori", id);
         await deleteDoc(docRef);
