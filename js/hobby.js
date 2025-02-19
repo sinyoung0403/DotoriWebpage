@@ -50,7 +50,7 @@ dotorihobby.forEach(coments => {
         <div class="card-body">
         <p class="card-text"><strong>${hobby}</strong></p>
         <p class="card-text">${name}(Spring_6기)</p>
-        <button type="button" class="btn btn-dark">기록하기</button>
+        <button type="button" class="btn btn-dark">삭제하기</button>
     </div>
     `;
 
