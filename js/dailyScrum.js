@@ -54,7 +54,6 @@ $("#scrumBtn").click(async function () {
 })
 
 // 데이터 띄우기
-// 먼저 데이터를 가져와야함.
 let scrums = await getDocs(collection(db,"Scrum"));
 scrums.forEach(scrum=> {
     let teamAim= scrum.data()['teamAim']
