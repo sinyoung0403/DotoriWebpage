@@ -43,32 +43,32 @@ $("#addScrumBtn").click(async function () {
         id: customId,
         teamAim: teamAim,
         ghGoal: ghGoal,
-        cjGoal:cjGoal,
-        syGoal:syGoal,
-        ghcheck:" ",
-        cjcheck:" ",
-        sycheck:" ",
-        date:date
+        cjGoal: cjGoal,
+        syGoal: syGoal,
+        ghcheck: " ",
+        cjcheck: " ",
+        sycheck: " ",
+        date: date
     });
     window.location.reload();
 })
 
 // 데이터 띄우기
-let scrums = await getDocs(collection(db,"Scrum"));
-scrums.forEach(scrum=> {
-    let teamAim= scrum.data()['teamAim']
-    let ghGoal= scrum.data()['ghGoal']
-    let cjGoal= scrum.data()['cjGoal']
-    let syGoal= scrum.data()['syGoal']
-    let id= scrum.data()['id']
-    let date= scrum.data()['date']
+let scrums = await getDocs(collection(db, "Scrum"));
+scrums.forEach(scrum => {
+    let teamAim = scrum.data()['teamAim']
+    let ghGoal = scrum.data()['ghGoal']
+    let cjGoal = scrum.data()['cjGoal']
+    let syGoal = scrum.data()['syGoal']
+    let id = scrum.data()['id']
+    let date = scrum.data()['date']
     let ghcheck = scrum.data()['ghcheck']
     let cjcheck = scrum.data()['cjcheck']
     let sycheck = scrum.data()['sycheck']
     let temp_html = ``
 
-    temp_html= 
-    `   <div class="accordion-item" id="${id}">
+    temp_html =
+        `   <div class="accordion-item" id="${id}">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${id}" aria-expanded="false" aria-controls="collapse${id}">
                         # ${date} ] 데일리 스크럼
@@ -83,13 +83,13 @@ scrums.forEach(scrum=> {
                         <div>
                             <h5>개별 목표 달성 여부</h5>
                             <div class="form-check">
-                                <input class="form-check-input ghcheckbox" type="checkbox" value="" id="flexCheckDefault" ${ghcheck}>
+                                <input class="form-check-input ghcheckbox" type="checkbox" value="" id="flexCheckDefault" ${ghcheck} disabled>
                                 <label class="form-check-label" for="flexCheckDefault">
                                     ${ghGoal}
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input cjcheckbox"  type="checkbox" value="" id="flexCheckDefault" ${cjcheck}>
+                                <input class="form-check-input cjcheckbox"  type="checkbox" value="" id="flexCheckDefault" ${cjcheck} disabled>
                                 <label class="form-check-label" for="flexCheckDefault">
                                     ${cjGoal}
                                 </label>
@@ -102,7 +102,7 @@ scrums.forEach(scrum=> {
                             </div>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <button id="scrumDeleteBtn" class="btn btn-warning" type="button">삭제하기</button>
+                            <button id="scrumDeleteBtn" class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#deleteScrumModal">삭제하기</button>
                         </div>
                     </div>
                 </div>
@@ -167,25 +167,26 @@ $('.sycheckbox').change(async function () {
 });
 
 // 삭제 버튼을 클릭했을 시,
-$(document).on("click","#scrumDeleteBtn",async function () {
+$(document).on("click", "#scrumDeleteBtn", async function () {
     let id = $(this).parent().parent().parent().parent().attr("id");
 
-
-    fetch(`https://firestore.googleapis.com/v1/projects/tododata-e3181/databases/(default)/documents/Scrum/${id}`, {
-        method: "DELETE",
-        headers: {
-            "x-goog-api-key": `AIzaSyC_AWLt1X27LrQB9j4H67Zf0N5v0Hc4Vig`
-        }
-    })
-    .then(response => {
-        if (response.ok) {
-            console.log("삭제 완료!");
-            location.reload(); // 페이지 새로고침
-        } else {
-            console.error("삭제 실패:", response.statusText);
-        }
-    })
-    .catch(error => console.error("오류 발생:", error));
+    $(document).on("click", "#deleteScrumBtn", async function () {
+        fetch(`https://firestore.googleapis.com/v1/projects/tododata-e3181/databases/(default)/documents/Scrum/${id}`, {
+            method: "DELETE",
+            headers: {
+                "x-goog-api-key": `AIzaSyC_AWLt1X27LrQB9j4H67Zf0N5v0Hc4Vig`
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log("삭제 완료!");
+                location.reload(); // 페이지 새로고침
+            } else {
+                console.error("삭제 실패:", response.statusText);
+            }
+        })
+        .catch(error => console.error("오류 발생:", error));
+    });
 })
 
 
