@@ -44,14 +44,15 @@ dotorihobby.forEach(coments => {
     let hobby = coments.data()['hobby'];
     let name = coments.data()['name'];
     let temp_html = ``
-    console.log(id);
+    console.log(id,img,hobby,name);
     temp_html = ` 
     <div class="hobbycard" style="width: 18rem;" data-value= "${id}" >
         <img src="${img}" class="card-img-top" alt="...">
         <div class="card-body">
-        <p class="card-text"><strong>${hobby}</strong></p>
-        <p class="card-text">${name}(Spring_6기)</p>
-        <button id ="hobbyDelete" type="button" class="btn btn-dark">삭제하기</button>
+            <p class="card-text"><strong>${hobby}</strong></p>
+            <p class="card-text">${name}(Spring_6기)</p>
+            <button id ="hobbyDelete" type="button" class="btn btn-dark">삭제하기</button>
+        </div>
     </div>
     `;
 
@@ -61,9 +62,9 @@ dotorihobby.forEach(coments => {
 // 취미 삭제하기
 
 $(document).on("click", "#hobbyDelete", async function () {
-    let id = $(".hobbycard").data("value");
-    console.log(id);
+    let id = $(".hobbycard").data("value").toString();
     const docRef = doc(db, "Dotorihobby", id);
     await deleteDoc(docRef);
+    window.location.reload();
 })
 
