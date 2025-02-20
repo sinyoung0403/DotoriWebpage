@@ -197,6 +197,7 @@ $(document).on("click", "#scrumEditBtn", async function () {
     })
         .then(response => response.json()) // json 으로 파싱.
         .then(data => {
+            $("#editBox").remove();
             const cjGoal = data.fields.cjGoal.stringValue;
             const cjcheck = data.fields.cjcheck.stringValue;
             const date = data.fields.date.stringValue;
