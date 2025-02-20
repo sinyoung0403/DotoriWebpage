@@ -5,8 +5,9 @@
 
 ## 🎫 배포 사이트
 
-### ✔️ 
+### ✔️ https://sinyoung0403.github.io/DotoriWebpage/
 - 메인 페이지에서 방명록을 쓸 수 있습니다.
+- 상세 페이지에서는 각 팀원의 소개를 볼 수 있습니다.
 - 취미 페이지에서는 취미 등록 및 삭제가 가능합니다.
 - 스크럼 페이지에서는 목표를 추가, 삭제, 편집, 완료 여부를 저장할 수 있는 기능을 제공합니다.
 <br>
@@ -19,7 +20,7 @@
 |:-------------:|:-------------:|:-------------:|:-------------:|
 |프로필|![image](https://avatars.githubusercontent.com/u/94594402?v=4&size=64)|![image](https://avatars.githubusercontent.com/u/196007904?v=4&size=64)|![image](https://avatars.githubusercontent.com/u/109498876?v=4&size=64)|
 |이름|박신영|김규현|김채진|
-|GitHub|sinyoung0403|0122-0|Spring 6기|
+|GitHub|sinyoung0403|0122-0|kmchaejin|
 |기술블로그|[신영tistory](https://sintory-04.tistory.com/)|[규현velog](https://velog.io/@flowercat95/posts)|[채진tistory](https://go-getter1kim.tistory.com/)|
 
 <br>
@@ -29,7 +30,7 @@
 
 ### ✔️ 프로젝트 이름
 
-- "DotoriWebpage"
+- **" Dotori Webpage "**
 
 ### ✔️ 프로젝트 소개
 
@@ -38,29 +39,95 @@
 - Firebase의 `JavaScript SDK`와 `Fetch`를 활용하여 real-time data storage를 구현했습니다.
 - `HTML`, `CSS`, `Bootstrap` 으로 디자인 하였으며, `JS`와 `Jqery`를 활용하여 데이터의 실시간 반영, 동적관리 등을 통해 사용자와의 상호작용을 강화했습니다.
 
+### ✔️ 프로젝트 WBS
+![image](https://github.com/user-attachments/assets/c2cf69d4-3347-475c-81d6-8ae6929dc330)
+
+
 <br>
 <br>
 
+## 🌟 주요 기능 
 
-## 💡 구현한 기
+#### 1️⃣ 방명록 Create, Read, Delete 구현
+#### 2️⃣ 데일리 스크럼 Create, Read, Update, Delete 구현
+#### 3️⃣ 취미 Create, Read, Delete 구현
+
+<br>
+<br>
+
+## 💡 구현된 기능
 
 ### ✔️ 메인 페이지 
 
-#### 팀 소개 부분
+1️⃣ 조회
+- 방명록 조회
 
+2️⃣ 추가
+- 방명록 버튼 클릭 시, 입력 폼 토글 동작
+- 입력폼 기록하기 버튼 클릭 시, 모달 동작
 
-#### 방명록 부분
+  → 모달의 생성하기 버튼 클릭 시, 페이지 리로드 & 방명록 데이터 추가
+
+3️⃣ 삭제
+- 방명록 삭제 버튼 클릭 시, 모달 동작
+  
+  → 모달의 삭제하기 버튼 클릭 시, 페이지 리로드 & 방명록 데이터 삭제
+
+4️⃣ 기타
+
+- Bootstrap의 `carousel`를 통해 팀 소개, 팀 목표, 팀 약속 조회
+- `Fetch API` 를 통해 날씨 `API` 제공
+
+<br>
+
+### ✔️ 상세 페이지 
+- Bootstrap의 `carousel` 배치
+- Bootstrap의 `collapse` 배치
+- Bootstrap의 `accordion` 배치
+
+<br>
 
 ### ✔️ 데일리 스크럼 페이지
-- Existing tasks can be edited.
-- 
+
+1️⃣ 조회
+- 일자별 데일리 스크럼 목록 조회
+- 데일리 스크럼 버튼 클릭 시, 상세 정보 토글로 조회
+
+2️⃣ 추가
+- 입력 폼에 팀 목표, 개별 목표 작성 후 기록하기 버튼 클릭 시, 모달 동작
+  
+  → 모달의 추가하기 버튼 클릭 시, 페이지 리로드 & 방명록 데이터 추가  
+
+3️⃣ 삭제
+- 삭제하기 버튼 클릭 시, 모달 동작
+
+  → 모달의 삭제하기 버튼 클릭 시, 페이지 리로드 & 데이터 삭제
+
+4️⃣ 수정
+- 각 스크럼 항목의 수정하기 버튼 클릭 시, 개별 수정 창 동적 동작
+- 수정완료 버튼 클릭 시, 모달 동작
+  
+  → 모달의 완료하기 버튼 클릭 시, 페이지 리로드 & 데이터 수정 구현
+
+<br>
 
 ### ✔️ 취미 페이지
-- 취미 기록
 
-- 기록된 취미 삭제
+1️⃣ 조회
 
-- 등록된 취미 부분을 토글
+- '펼쳐보기' 버튼을 클릭 시, 토글로 취미 목록 조회
+
+2️⃣ 추가
+
+- 기록하기 버튼 클릭 시, 페이지 리로드 & 취미 데이터 추가 
+
+3️⃣ 삭제
+
+- 삭제하기 버튼 클릭 시, 페이지 리로드 & 취미 데이터 삭제 
+
+4️⃣ 기타
+- Bootstrap의 `carousel`를 통해 팀원들의 취미 조회
+
 
 
 <br>
@@ -125,24 +192,65 @@
 <br>
 <br>
 
+
+
 ## 💻 Screen Layout
-| Main Page - (To Do Page) |
-|:-------------:|
-| ![image](https://github.com/user-attachments/assets/1be070d8-f896-471c-a1db-79e6c373a726) |
 
-| Done Page |
-|:-------------:|
-| ![image](https://github.com/user-attachments/assets/1e853d8d-da6b-4c9d-b997-b8387b36cb3c) |
+### 메인 페이지
+<p align="center">
+<img src="./img/mainPage1.png" width="300" height="200">
+<img src="./img/mainPage2.png" width="300" height="200">
+<img src="./img/mainPage3.png" width="300" height="200">
+</p>
 
-| Create Action | Edit Action |
-|:-------------:|:-------------:|
-|![image](https://github.com/user-attachments/assets/7a6ef2c0-c649-44fd-b507-2164fd511128)|![image](https://github.com/user-attachments/assets/6dc4fcf7-43ec-4a8e-981d-caba47599735)|
+<br>
+<br>
 
-| Delete Action | Check Action |
-|:-------------:|:-------------:|
-|![image](https://github.com/user-attachments/assets/3cf1dec1-449f-4c68-a625-ea88ced064e9)|![image](https://github.com/user-attachments/assets/ecb76f89-7292-4dbb-ab8f-265e31d282e8)|
+### 상세 페이지
+#### 규현 개인 페이지
+<p align="center">
+<img src="./img/ghPage1.png" width="300" height="200">
+<img src="./img/ghPage2.png" width="300" height="200">
+</p>
 
+#### 채진 개인 페이지
+<p align="center">
+<img src="./img/cjPage1.png" width="250" height="200">
+<img src="./img/cjPage2.png" width="250" height="200">
+<img src="./img/cjPage3.png" width="250" height="200">
+</p>
 
+#### 신영 개인 페이지
+<p align="center">
+<img src="./img/syPage1.png" width="300" height="200">
+<img src="./img/syPage2.png" width="300" height="200">
+<img src="./img/syPage3.png" width="300" height="200">
+<img src="./img/syPage4.png" width="300" height="200">
+</p>
+
+<br>
+<br>
+
+### 취미 페이지
+
+<p align="center">
+<img src="./img/취미1.png" width="300" height="200">
+<img src="./img/취미2.png" width="300" height="200">
+</p>
+<p align="center">
+<img src="./img/취미3.png" width="300" height="200">
+<img src="./img/취미4.png" width="300" height="200">
+</p>
+
+### 데일리 스크럼
+<p align="center">
+<img src="./img/데일리1.png" width="300" height="200">
+<img src="./img/데일리4.png" width="300" height="200">
+<img src="./img/데일리6.png" width="300" height="200">
+<img src="./img/데일리7.png" width="300" height="200">
+<img src="./img/데일리8.png" width="300" height="200">
+<img src="./img/데일리9.png" width="300" height="200">
+</p>
 
 <br>
 <br>

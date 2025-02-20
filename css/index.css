@@ -68,6 +68,9 @@ a:link, a:visited {
     text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
+#weatherInfo {
+    margin-top: 20px !important;
+}
 
 
 /**********************/
