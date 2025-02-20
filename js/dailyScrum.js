@@ -250,7 +250,7 @@ $(document).on("click", "#scrumEditBtn", async function () {
                 <br>
                 <div class="mybtn">
                     <!-- 수정하기 버튼 / 모달 작동 시키면 됩니다. -->
-                    <button id="EditBtn" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editScrumModal">수정하기</button>
+                    <button id="EditBtn" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editScrumModal">수정완료</button>
                     <button id="EditcloseBtn" type="button" class="btn btn-warning">닫기</button>
                 </div>
             </div>
