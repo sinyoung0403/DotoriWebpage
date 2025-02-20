@@ -184,6 +184,8 @@
 
 ## 💻 Screen Layout
 
+### 메인 페이지
+<img src="./img/mainPage1" width="300" height="200">
 
 <br>
 <br>
