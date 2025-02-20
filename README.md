@@ -187,5 +187,15 @@
 ### 메인 페이지
 <img src="./img/mainPage1.png" width="300" height="200">
 
+### 취미 페이지
+
+<p align="center">
+<img src="./img/취미1.png" width="300" height="200">
+<img src="./img/취미2.png" width="300" height="200">
+</p>
+<p align="center">
+<img src="./img/취미3.png" width="300" height="200">
+<img src="./img/취미4.png" width="300" height="200">
+</p>
 <br>
 <br>
