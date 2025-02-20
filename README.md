@@ -7,6 +7,7 @@
 
 ### ✔️ https://sinyoung0403.github.io/DotoriWebpage/
 - 메인 페이지에서 방명록을 쓸 수 있습니다.
+- 상세 페이지에서는 각 팀원의 소개를 볼 수 있습니다.
 - 취미 페이지에서는 취미 등록 및 삭제가 가능합니다.
 - 스크럼 페이지에서는 목표를 추가, 삭제, 편집, 완료 여부를 저장할 수 있는 기능을 제공합니다.
 <br>
@@ -72,6 +73,13 @@
 
 - Bootstrap의 `carousel`를 통해 팀 소개, 팀 목표, 팀 약속 조회
 - `Fetch API` 를 통해 날씨 `API` 제공
+
+<br>
+
+### ✔️ 상세 페이지 
+- Bootstrap의 `carousel` 배치
+- Bootstrap의 `collapse` 배치
+- Bootstrap의 `accordion` 배치
 
 <br>
 
@@ -185,7 +193,39 @@
 ## 💻 Screen Layout
 
 ### 메인 페이지
+<p align="center">
 <img src="./img/mainPage1.png" width="300" height="200">
+<img src="./img/mainPage2.png" width="300" height="200">
+<img src="./img/mainPage3.png" width="300" height="200">
+</p>
+
+<br>
+<br>
+
+### 상세 페이지
+#### 규현 개인 페이지
+<p align="center">
+<img src="./img/ghPage1.png" width="300" height="200">
+<img src="./img/ghPage2.png" width="300" height="200">
+</p>
+
+#### 채진 개인 페이지
+<p align="center">
+<img src="./img/cjPage1.png" width="250" height="200">
+<img src="./img/cjPage2.png" width="250" height="200">
+<img src="./img/cjPage3.png" width="250" height="200">
+</p>
+
+#### 신영 개인 페이지
+<p align="center">
+<img src="./img/syPage1.png" width="300" height="200">
+<img src="./img/syPage2.png" width="300" height="200">
+<img src="./img/syPage3.png" width="300" height="200">
+<img src="./img/syPage4.png" width="300" height="200">
+</p>
+
+<br>
+<br>
 
 ### 취미 페이지
 
