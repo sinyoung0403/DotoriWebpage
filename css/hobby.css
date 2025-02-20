@@ -91,7 +91,7 @@ a:visited {
 }
 
 .carousel-item {
-    height: 550px;
+    height: 650px;
 
 }
 
@@ -179,5 +179,5 @@ a:visited {
 
 /*카드 이미지*/
 .card > img {
-    object-fit: cover;
+    overflow: hidden;
 }
