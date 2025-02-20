@@ -155,9 +155,9 @@ $("#addScrumBtn").click(async function () {
     })
     .then(data => {
         console.log("문서 추가 성공:", data);
+        location.reload(); // 페이지 새로고침
     })
     .catch(error => console.error("데이터 추가 실패:", error));
-    location.reload(); // 페이지 새로고침
 });
 
 // 삭제 버튼을 클릭했을 시,
