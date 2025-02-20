@@ -1,7 +1,8 @@
 | 🌰 DotoriWebpage 🌰 |  
 |:-------------:|
-|  ![image](https://i.pinimg.com/236x/5a/83/d5/5a83d549e586c7071c1ed6dceeeac46a.jpg) |
+|![image](https://i.pinimg.com/236x/5a/83/d5/5a83d549e586c7071c1ed6dceeeac46a.jpg) |
 
+<br>
 
 ## 🎫 배포 사이트
 
@@ -174,6 +175,29 @@
 | 2 | name |  String | 기록한 사용자의 이름 |
 | 3 | img |  String | 기록한 사용자의 취미를 보여주는 사진 (이미지 주소) |
 | 4 | hobby |  String | 기록한 사용자의 취미의 이름 |
+
+<br>
+<br>
+
+## 📑 REST API 문서
+
+### ✔️ 데이터 조회 - GET
+
+![RESTAPI1](https://github.com/user-attachments/assets/3a21bd59-b74e-47a5-a0c7-c40ec3ba0fa9)
+
+### ✔️ 데이터 추가 - POST
+
+![RESTAPI2](https://github.com/user-attachments/assets/1f39d28e-176e-48e4-857a-023ccccab12c)
+
+### ✔️ 데이터 수정 - PATCH 
+
+![RESTAPI4](https://github.com/user-attachments/assets/bed8ca8e-d427-4310-a462-b6b37c0b46bc)
+
+### ✔️ 데이터 삭제 - DELETE
+
+![RESTAPI3](https://github.com/user-attachments/assets/a42de773-729d-47de-a8f5-95b526b4c764)
+
+
 
 <br>
 <br>
