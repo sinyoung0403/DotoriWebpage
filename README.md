@@ -39,6 +39,10 @@
 - Firebase의 `JavaScript SDK`와 `Fetch`를 활용하여 real-time data storage를 구현했습니다.
 - `HTML`, `CSS`, `Bootstrap` 으로 디자인 하였으며, `JS`와 `Jqery`를 활용하여 데이터의 실시간 반영, 동적관리 등을 통해 사용자와의 상호작용을 강화했습니다.
 
+### ✔️ 프로젝트 WBS
+![image](https://github.com/user-attachments/assets/c2cf69d4-3347-475c-81d6-8ae6929dc330)
+
+
 <br>
 <br>
 
