@@ -146,18 +146,22 @@ $("#addScrumBtn").click(async function () {
         },
         body: JSON.stringify(data)  // 데이터를 JSON으로 변환하여 전송
     })
-    .then(response => {
-        if (!response.ok) {
-            console.error("Error: ", response.statusText);
-            return response.text(); // 응답을 텍스트로 읽기
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log("문서 추가 성공:", data);
-        location.reload(); // 페이지 새로고침
-    })
-    .catch(error => console.error("데이터 추가 실패:", error));
+        .then(response => {
+            console.log(response.body)
+            if (!response.ok) {
+
+                console.error("Error: ", response.statusText);
+                return response.text(); // 응답을 텍스트로 읽기
+
+            }
+            location.reload(); // 페이지 새로고침
+            return response.json();
+        })
+        .then(data => {
+            console.log(JSON.stringify(data))
+            location.reload(); // 페이지 새로고침
+        })
+        .catch(error => console.error("데이터 추가 실패:", error));
 });
 
 // 삭제 버튼을 클릭했을 시,
@@ -175,8 +179,6 @@ $(document).on("click", "#scrumDeleteBtn", async function () {
                 if (response.ok) {
                     console.log("삭제 완료!");
                     location.reload(); // 페이지 새로고침
-                } else {
-                    console.error("삭제 실패:", response.statusText);
                 }
             })
             .catch(error => console.error("오류 발생:", error));
@@ -208,7 +210,7 @@ $(document).on("click", "#scrumEditBtn", async function () {
             const syGoal = data.fields.syGoal.stringValue;
             const sycheck = data.fields.sycheck.stringValue;
             const teamAim = data.fields.teamAim.stringValue;
-            
+
             let temp_html = `
             <div class="mypostingbox" id="editBox" data-value="${document_id}">
                 <h3>데일리 스크럼 수정</h3>
@@ -286,7 +288,7 @@ $(document).on("click", "#EditBtn", async function () {
     $(document).on("click", "#editScrumBtn", async function () {
         // PATCH 요청으로 데이터 업데이트
         fetch(`https://firestore.googleapis.com/v1/projects/tododata-e3181/databases/(default)/documents/Scrum/${id}?` +
-             `updateMask.fieldPaths=date&updateMask.fieldPaths=teamAim&updateMask.fieldPaths=ghGoal&` +
+            `updateMask.fieldPaths=date&updateMask.fieldPaths=teamAim&updateMask.fieldPaths=ghGoal&` +
             `updateMask.fieldPaths=cjGoal&updateMask.fieldPaths=syGoal&updateMask.fieldPaths=ghcheck&` +
             `updateMask.fieldPaths=cjcheck&updateMask.fieldPaths=sycheck`, {
             method: "PATCH",
@@ -307,14 +309,18 @@ $(document).on("click", "#EditBtn", async function () {
                 }
             })
         })
-
             .then(response => {
                 if (response.ok) {
                     location.reload(); // 페이지 새로고침
+                    return response.json();
                 } else {
                     throw new Error("업데이트 실패");
                 }
             })
+            .then(responseData=>{
+                console.log(JSON.stringify(responseData));
+            })
+
     })
 })
 
