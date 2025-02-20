@@ -29,7 +29,7 @@
 
 ### ✔️ 프로젝트 이름
 
-- "DotoriWebpage"
+- **" Dotori Webpage "**
 
 ### ✔️ 프로젝트 소개
 
