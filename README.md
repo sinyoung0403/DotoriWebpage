@@ -237,5 +237,16 @@
 <img src="./img/취미3.png" width="300" height="200">
 <img src="./img/취미4.png" width="300" height="200">
 </p>
+
+### 데일리 스크럼
+<p align="center">
+<img src="./img/데일리1.png" width="300" height="200">
+<img src="./img/데일리4.png" width="300" height="200">
+<img src="./img/데일리6.png" width="300" height="200">
+<img src="./img/데일리7.png" width="300" height="200">
+<img src="./img/데일리8.png" width="300" height="200">
+<img src="./img/데일리9.png" width="300" height="200">
+</p>
+
 <br>
 <br>
