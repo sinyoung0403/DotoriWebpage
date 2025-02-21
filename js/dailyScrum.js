@@ -177,30 +177,37 @@ $("#pwdScrumok").click(async function () {
 
 // 삭제 버튼을 클릭했을 시,
 $(document).on("click", "#scrumDeleteBtn", async function () {
-    const pwd = prompt("비밀번호를 입력하세요:").trim();
-    if (pwd == 'gcs') {
-        let id = $(this).parent().parent().parent().parent().attr("id");
+    let id = $(this).parent().parent().parent().parent().attr("id");
 
-        $(document).on("click", "#deleteScrumBtn", async function () {
-            fetch(`https://firestore.googleapis.com/v1/projects/tododata-e3181/databases/(default)/documents/Scrum/${id}`, {
-                method: "DELETE",
-                headers: {
-                    "x-goog-api-key": `AIzaSyC_AWLt1X27LrQB9j4H67Zf0N5v0Hc4Vig`
-                }
-            })
-                .then(response => {
-                    if (response.ok) {
-                        console.log("삭제 완료!");
-                        location.reload(); // 페이지 새로고침
+    $('#deleteScrumModal').on('shown.bs.modal', function () {{
+        $(document).one("click", "#deleteScrumBtn", async function () {
+            let pwd = $("#scrumDeleteInval").val();
+            console.log(pwd)
+
+            if (pwd == 'gcs') {
+                fetch(`https://firestore.googleapis.com/v1/projects/tododata-e3181/databases/(default)/documents/Scrum/${id}`, {
+                    method: "DELETE",
+                    headers: {
+                        "x-goog-api-key": `AIzaSyC_AWLt1X27LrQB9j4H67Zf0N5v0Hc4Vig`
                     }
                 })
-                .catch(error => console.error("오류 발생:", error));
-        });
+                    .then(response => {
+                        if (response.ok) {
+                            console.log("삭제 완료!");
+                            location.reload(); // 페이지 새로고침
+                        }
+                    })
+                    .catch(error => console.error("오류 발생:", error));
+            }
+            else {
+                $("#deleteScrumModal").modal("hide");
+                $("#pwdScrumModal").modal("show");
+            }
+
+    });
+    
     }
-    else {
-        $("#pwdScrumModal").modal("show");
-    }
-})
+})})
 
 
 // Edit Div 창 띄우기
