@@ -267,8 +267,8 @@ $(document).on("click", "#scrumEditBtn", async function () {
                         </label>
                 </div>
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="scrumPassword" placeholder="Password">
-                    <label for="scrumPassword">비밀번호</label>
+                    <input type="password" class="form-control" id="scrumEditPassword" placeholder="Password">
+                    <label for="scrumEditPassword">비밀번호</label>
                 </div>
                 <br>
                 <div class="mybtn">
@@ -286,7 +286,7 @@ $(document).on("click", "#scrumEditBtn", async function () {
 
 // 실제 수정하기 버튼을 눌렀을 시, 데이터를 Edit 해주기
 $(document).on("click", "#EditBtn", async function () {
-    let pwd = $('#scrumPassword').val().trim()
+    let pwd = $('#scrumEditPassword').val().trim()
     if (pwd == "gcs") {
         let id = $("#editBox").data("value").toString();
         let teamAim = $("#editteamAim").val();
